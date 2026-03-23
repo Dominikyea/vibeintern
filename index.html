@@ -662,12 +662,131 @@
     }
 
     .carousel-track .video-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      transform: translateY(-8px) scale(1.06);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+      z-index: 10;
     }
 
     .carousel-track .video-card:hover video {
       /* Auto-play on hover handled by JS */
+    }
+
+    /* ========================================
+       LIGHTBOX / MODAL
+       ======================================== */
+    .lightbox-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      cursor: pointer;
+      animation: lightbox-in 0.25s ease;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    @keyframes lightbox-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox-content {
+      background: var(--white);
+      border-radius: 20px;
+      max-width: 520px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      cursor: default;
+      position: relative;
+      animation: lightbox-scale 0.25s ease;
+    }
+
+    @keyframes lightbox-scale {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-media img,
+    .lightbox-media video {
+      width: 100%;
+      display: block;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .lightbox-body {
+      padding: 24px 28px 28px;
+    }
+
+    .lightbox-handle {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-500);
+      margin-bottom: 8px;
+    }
+
+    .lightbox-text {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--dark);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .lightbox-stats {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+
+    .lightbox-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: var(--orange);
+      color: white;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .lightbox-cta:hover {
+      background: var(--orange-hover);
+      color: white;
     }
 
     .carousel-track .quote-card {
@@ -1683,6 +1802,22 @@
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <div class="lightbox-media" id="lightbox-media"></div>
+      <div class="lightbox-body">
+        <p class="lightbox-handle" id="lightbox-handle"></p>
+        <p class="lightbox-text" id="lightbox-text"></p>
+        <p class="lightbox-stats" id="lightbox-stats"></p>
+        <a class="lightbox-cta" id="lightbox-cta" href="#" target="_blank" rel="noopener">
+          View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- V3: MARQUEE TICKER STRIP -->
   <div class="marquee-strip" aria-hidden="true">
     <div class="marquee-track">
@@ -2623,16 +2758,75 @@
       }
     });
 
-    // Click card to open tweet on X
-    document.querySelectorAll('.carousel-track .video-card').forEach(card => {
+    // Click card to open lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxMedia = document.getElementById('lightbox-media');
+    const lightboxHandle = document.getElementById('lightbox-handle');
+    const lightboxText = document.getElementById('lightbox-text');
+    const lightboxStats = document.getElementById('lightbox-stats');
+    const lightboxCta = document.getElementById('lightbox-cta');
+
+    function openLightbox(card) {
+      const img = card.querySelector('img');
+      const video = card.querySelector('video');
+      const handle = card.querySelector('p[style*="uppercase"]');
+      const text = card.querySelector('p[style*="font-weight: 600"][style*="color: var(--dark)"]');
+      const caption = card.querySelector('.video-caption-text');
+      const stats = card.querySelector('.video-stats');
       const link = card.querySelector('a[href*="x.com"], a[href*="twitter.com"]');
-      if (link) {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', (e) => {
-          if (e.target.tagName === 'VIDEO' || e.target.closest('video')) return; // let video controls work
-          window.open(link.href, '_blank');
-        });
+
+      lightboxMedia.innerHTML = '';
+      if (video) {
+        const v = document.createElement('video');
+        v.src = video.src;
+        v.poster = video.poster || '';
+        v.controls = true;
+        v.autoplay = true;
+        v.playsInline = true;
+        v.style.maxHeight = '60vh';
+        v.style.objectFit = 'contain';
+        v.style.background = '#000';
+        lightboxMedia.appendChild(v);
+      } else if (img) {
+        const i = document.createElement('img');
+        i.src = img.src;
+        i.alt = img.alt;
+        i.style.maxHeight = '60vh';
+        i.style.objectFit = 'contain';
+        lightboxMedia.appendChild(i);
       }
+
+      lightboxHandle.textContent = handle ? handle.textContent : '';
+      lightboxText.textContent = text ? text.textContent : (caption ? caption.textContent : '');
+      lightboxStats.textContent = stats ? stats.textContent : '';
+      if (link) lightboxCta.href = link.href;
+
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      const v = lightboxMedia.querySelector('video');
+      if (v) v.pause();
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    document.querySelectorAll('.carousel-track .video-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('video') && e.target.tagName !== 'VIDEO') return;
+        if (e.target.tagName === 'VIDEO') return; // let inline video controls work
+        openLightbox(card);
+      });
     });
   </script>
 
