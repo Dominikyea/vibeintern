@@ -627,6 +627,111 @@
       font-weight: 500;
     }
 
+    /* ========================================
+       CAROUSEL / SLIDESHOW
+       ======================================== */
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin: 0 -32px;
+      padding: 0 32px;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 8px 0 16px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-track .video-card {
+      min-width: 320px;
+      max-width: 340px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .carousel-track .video-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .carousel-track .video-card:hover video {
+      /* Auto-play on hover handled by JS */
+    }
+
+    .carousel-track .quote-card {
+      min-width: 280px;
+      max-width: 320px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .carousel-track .quote-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .carousel-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .carousel-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gray-300);
+      background: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      color: var(--gray-700);
+    }
+
+    .carousel-btn:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .carousel-progress {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      margin-top: 12px;
+      justify-content: center;
+    }
+
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gray-300);
+      transition: all 0.3s ease;
+    }
+
+    .carousel-dot.active {
+      width: 24px;
+      border-radius: 3px;
+      background: var(--orange);
+    }
+
     /* Quote cards for brand content */
     .quote-cards-grid {
       display: grid;
@@ -1699,8 +1804,8 @@
           <div class="stat-label">X followers grown at Xverse</div>
         </div>
         <div class="stat-card fade-up fade-up-delay-1">
-          <div class="stat-number">2x</div>
-          <div class="stat-label">Growth in first 3 months</div>
+          <div class="stat-number">100+</div>
+          <div class="stat-label">KOLs managed globally</div>
         </div>
         <div class="stat-card fade-up fade-up-delay-2">
           <div class="stat-number">360+</div>
@@ -1721,13 +1826,14 @@
   <section class="viral-content" id="content">
     <div class="container">
       <span class="section-label fade-up">Content</span>
-      <h2 class="section-title fade-up">Content that went viral</h2>
+      <h2 class="section-title fade-up">Content that hit</h2>
 
       <!-- Subsection A1: Personal Posts -->
-      <h3 class="subsection-heading fade-up">Personal posts</h3>
+      <h3 class="subsection-heading fade-up">Personal posts <span style="font-size: 0.5em; font-weight: 500; color: var(--gray-500); margin-left: 8px;">2-3% engagement (6x platform avg) &middot; 100% organic</span></h3>
       <p class="subsection-desc fade-up">My own account &mdash; threads, memes, and culture content that resonated with crypto Twitter.</p>
 
-      <div class="content-grid">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" data-carousel="personal">
         <!-- 1. Leonidas tribute thread — 1,234 likes -->
         <div class="video-card fade-up">
           <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
@@ -1781,10 +1887,7 @@
             <p class="video-stats">641 likes &middot; 151 RTs</p>
           </div>
         </div>
-      </div>
 
-      <!-- Row 2: More personal posts -->
-      <div class="content-grid" style="margin-top: 28px;">
         <!-- 4. "What you actually do at crypto conf" — 140 likes -->
         <div class="video-card fade-up">
           <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
@@ -1802,14 +1905,24 @@
             <p class="video-stats">140 likes &middot; Culture content</p>
           </div>
         </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" onclick="scrollCarousel('personal', -1)" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn" onclick="scrollCarousel('personal', 1)" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
 
       <!-- Subsection A2: Brand Content -->
-      <h3 class="subsection-heading fade-up" style="margin-top: 72px;">Brand content I wrote</h3>
+      <h3 class="subsection-heading fade-up" style="margin-top: 72px;">Brand content I wrote <span style="font-size: 0.5em; font-weight: 500; color: var(--gray-500); margin-left: 8px;">50K &rarr; 127K followers &middot; 324K peak views</span></h3>
       <p class="subsection-desc fade-up">Content I created for the @xverse account &mdash; videos, product launches, and brand voice posts.</p>
 
       <!-- Row 1: Existing video embeds (kept from original) -->
-      <div class="content-grid">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" data-carousel="brand">
         <div class="video-card fade-up">
           <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
             <img src="img/wake-up-xverse.jpg" alt="Wake up, stare at Xverse, go back to bed" style="width: 100%; height: 220px; object-fit: cover; display: block;">
@@ -1860,10 +1973,20 @@
             <p class="video-stats">324K views &middot; Most viral</p>
           </div>
         </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" onclick="scrollCarousel('brand', -1)" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn" onclick="scrollCarousel('brand', 1)" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
 
       <!-- Row 2: Brand text posts as styled quote cards -->
-      <div class="quote-cards-grid fade-up" style="margin-top: 28px;">
+      <div class="carousel-wrapper" style="margin-top: 28px;">
+        <div class="carousel-track" data-carousel="brand-text">
         <!-- "Should we add this feature?" — 906 likes -->
         <div class="quote-card">
           <p class="quote-card-text">"Should we add this feature?"</p>
@@ -1910,6 +2033,15 @@
           <a href="https://x.com/xverse/status/1953593332518859220" target="_blank" rel="noopener" class="quote-card-link">
             View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
+        </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" onclick="scrollCarousel('brand-text', -1)" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn" onclick="scrollCarousel('brand-text', 1)" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -2446,6 +2578,61 @@
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // ========================================
+    // CAROUSEL AUTO-SCROLL + INTERACTION
+    // ========================================
+    function scrollCarousel(name, direction) {
+      const track = document.querySelector(`[data-carousel="${name}"]`);
+      if (!track) return;
+      const cardWidth = track.querySelector('.video-card, .quote-card')?.offsetWidth || 340;
+      track.scrollBy({ left: direction * (cardWidth + 24), behavior: 'smooth' });
+    }
+
+    // Auto-scroll every 5 seconds, pause on hover
+    document.querySelectorAll('.carousel-track').forEach(track => {
+      let interval;
+
+      const startAutoScroll = () => {
+        interval = setInterval(() => {
+          const maxScroll = track.scrollWidth - track.clientWidth;
+          if (track.scrollLeft >= maxScroll - 10) {
+            track.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            const cardWidth = track.querySelector('.video-card, .quote-card')?.offsetWidth || 340;
+            track.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+          }
+        }, 5000);
+      };
+
+      startAutoScroll();
+
+      track.addEventListener('mouseenter', () => clearInterval(interval));
+      track.addEventListener('mouseleave', startAutoScroll);
+      track.addEventListener('touchstart', () => clearInterval(interval), { passive: true });
+      track.addEventListener('touchend', () => { setTimeout(startAutoScroll, 3000); });
+    });
+
+    // Video hover-to-play
+    document.querySelectorAll('.carousel-track .video-card').forEach(card => {
+      const video = card.querySelector('video');
+      if (video) {
+        card.addEventListener('mouseenter', () => { video.play().catch(() => {}); });
+        card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+      }
+    });
+
+    // Click card to open tweet on X
+    document.querySelectorAll('.carousel-track .video-card').forEach(card => {
+      const link = card.querySelector('a[href*="x.com"], a[href*="twitter.com"]');
+      if (link) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+          if (e.target.tagName === 'VIDEO' || e.target.closest('video')) return; // let video controls work
+          window.open(link.href, '_blank');
+        });
+      }
     });
   </script>
 
