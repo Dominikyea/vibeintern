@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dominic Tsang — Growth & Ecosystem Manager</title>
+  <meta name="description" content="Dominic Tsang — Growth & Ecosystem Manager at Xverse. Building at the intersection of Bitcoin, content, community, and creative GTM.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #FFFFFF;
+      color: #24292F;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ========================================
+       CSS VARIABLES
+       ======================================== */
+    :root {
+      --orange: #F8893A;
+      --orange-light: #FEF0E5;
+      --orange-hover: #E67A2E;
+      --purple: #7B61FF;
+      --purple-light: #F0EDFF;
+      --blue: #037DD6;
+      --blue-light: #EAF6FF;
+      --dark: #24292F;
+      --gray-900: #1B1F23;
+      --gray-700: #4A5056;
+      --gray-500: #6E7681;
+      --gray-300: #D0D7DE;
+      --gray-100: #F6F8FA;
+      --gray-50: #FAFBFC;
+      --white: #FFFFFF;
+      --max-width: 1140px;
+      --section-padding: 120px;
+      --border-radius: 16px;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(208, 215, 222, 0.4);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--gray-500);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--dark);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ========================================
+       CONTAINER
+       ======================================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--orange);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 16px;
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+    .hero {
+      padding-top: 160px;
+      padding-bottom: var(--section-padding);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(248, 137, 58, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(123, 97, 255, 0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange-light);
+      color: var(--orange);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--orange);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero-name {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      color: var(--orange);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-tagline {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      background: var(--orange);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(248, 137, 58, 0.3);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hero-image-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--purple));
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    .hero-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--white);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ========================================
+       ABOUT
+       ======================================== */
+    .about {
+      padding: var(--section-padding) 0;
+      background: var(--gray-50);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      line-height: 1.8;
+    }
+
+    .about-skills-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .skill-pill:nth-child(1) { background: var(--orange-light); color: #C4600A; }
+    .skill-pill:nth-child(2) { background: var(--purple-light); color: #5A42CC; }
+    .skill-pill:nth-child(3) { background: var(--blue-light); color: #0260A8; }
+    .skill-pill:nth-child(4) { background: #FFF4E5; color: #9A5C00; }
+    .skill-pill:nth-child(5) { background: #E8F5E9; color: #2E7D32; }
+    .skill-pill:nth-child(6) { background: #FDE8F0; color: #AD1457; }
+
+    .skill-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    /* ========================================
+       EXPERIENCE
+       ======================================== */
+    .experience {
+      padding: var(--section-padding) 0;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 48px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--orange), var(--purple), var(--blue));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 72px;
+      padding-bottom: 56px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 14px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--orange);
+      box-shadow: 0 0 0 4px rgba(248, 137, 58, 0.1);
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(2) .timeline-dot { border-color: var(--purple); box-shadow: 0 0 0 4px rgba(123, 97, 255, 0.1); }
+    .timeline-item:nth-child(3) .timeline-dot { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(3, 125, 214, 0.1); }
+    .timeline-item:nth-child(4) .timeline-dot { border-color: var(--gray-500); box-shadow: 0 0 0 4px rgba(110, 118, 129, 0.1); }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--gray-500);
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 2px;
+    }
+
+    .timeline-company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .timeline-desc {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ========================================
+       GROWTH IMPACT
+       ======================================== */
+    .impact {
+      padding: var(--section-padding) 0;
+      background: var(--gray-900);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(248, 137, 58, 0.08) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+
+    .impact .section-label {
+      color: var(--orange);
+    }
+
+    .impact .section-title {
+      color: var(--white);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--border-radius);
+      padding: 40px 28px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(248, 137, 58, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--orange), #FFB347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* ========================================
+       VIRAL CONTENT (replaces Video Work)
+       ======================================== */
+    .viral-content {
+      padding: var(--section-padding) 0;
+    }
+
+    .subsection-heading {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      margin-top: 56px;
+    }
+
+    .subsection-heading:first-of-type {
+      margin-top: 0;
+    }
+
+    .subsection-desc {
+      font-size: 0.95rem;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .video-card {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .video-card:hover {
+      border-color: var(--orange);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .video-embed {
+      width: 100%;
+      min-height: 350px;
+    }
+
+    .video-embed .twitter-tweet {
+      margin: 0 !important;
+    }
+
+    .video-caption {
+      padding: 20px 24px;
+      border-top: 1px solid var(--gray-300);
+    }
+
+    .video-caption-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .video-stats {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    /* Quote cards for brand content */
+    .quote-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .quote-card {
+      background: var(--gray-900);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--border-radius);
+      padding: 32px 28px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .quote-card:hover {
+      border-color: rgba(248, 137, 58, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .quote-card-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .quote-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .quote-card-handle {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .quote-card-handle a {
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.2s ease;
+    }
+
+    .quote-card-handle a:hover {
+      color: var(--orange);
+    }
+
+    .quote-card-engagement {
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--orange), #FFB347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+
+    .quote-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 12px;
+      transition: color 0.2s ease;
+    }
+
+    .quote-card-link:hover {
+      color: var(--orange);
+    }
+
+    .quote-card-link svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* ========================================
+       COMMUNITY PROOF (Testimonials)
+       ======================================== */
+    .community-proof {
+      padding: var(--section-padding) 0;
+      background: var(--gray-50);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--border-radius);
+      padding: 32px 24px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--orange);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-quote-icon {
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--orange);
+      opacity: 0.6;
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+    }
+
+    .testimonial-handle {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      transition: color 0.2s ease;
+    }
+
+    .testimonial-handle:hover {
+      color: var(--orange);
+    }
+
+    .testimonial-affiliation {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--orange);
+      background: var(--orange-light);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-top: 8px;
+    }
+
+    /* ========================================
+       SPEAKING & PANELS (updated)
+       ======================================== */
+    .speaking {
+      padding: var(--section-padding) 0;
+    }
+
+    .speaking-desc {
+      font-size: 1.125rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 600px;
+    }
+
+    .speaking-embeds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .events-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .event-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dark);
+      transition: all 0.2s ease;
+    }
+
+    .speaking .event-pill {
+      background: var(--gray-100);
+    }
+
+    .event-pill:hover {
+      border-color: var(--orange);
+      box-shadow: 0 4px 16px rgba(248, 137, 58, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .event-pill::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       VIRAL MARKETING CASE STUDY
+       ======================================== */
+    .case-study {
+      padding: var(--section-padding) 0;
+      background: var(--gray-50);
+    }
+
+    .case-study-card {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--border-radius);
+      padding: 48px;
+      margin-top: 48px;
+    }
+
+    .case-study-header {
+      margin-bottom: 32px;
+    }
+
+    .case-study-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--orange);
+      background: var(--orange-light);
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .case-study-name {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .case-study-desc {
+      font-size: 1rem;
+      color: var(--gray-700);
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    .case-study-arc {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
+
+    .arc-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      background: var(--gray-100);
+      padding: 8px 16px;
+      border-radius: 100px;
+    }
+
+    .arc-step::before {
+      content: attr(data-step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 700;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .arc-arrow {
+      display: inline-flex;
+      align-items: center;
+      color: var(--gray-300);
+      font-size: 1.2rem;
+    }
+
+    .case-study-embeds {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* ========================================
+       THE INTERN BRAND
+       ======================================== */
+    .intern-section {
+      padding: var(--section-padding) 0;
+    }
+
+    .intern-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 48px;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--border-radius);
+      padding: 48px;
+    }
+
+    .intern-text {
+      font-size: 1.05rem;
+      color: var(--gray-700);
+      line-height: 1.8;
+    }
+
+    .intern-embed-area {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .intern-highlight {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-500);
+      margin-top: 16px;
+    }
+
+    /* ========================================
+       FOOTER / CONTACT
+       ======================================== */
+    .footer {
+      padding: 80px 0 48px;
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .footer-title span {
+      background: linear-gradient(135deg, var(--orange), #FFB347);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-subtitle {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 36px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .footer-link--primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    .footer-link--primary:hover {
+      background: var(--orange-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(248, 137, 58, 0.4);
+    }
+
+    .footer-link--ghost {
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-link--ghost:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .footer-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin-bottom: 28px;
+    }
+
+    .footer-bottom {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* ========================================
+       ANIMATIONS
+       ======================================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1024px) {
+      :root {
+        --section-padding: 80px;
+      }
+
+      .hero-inner {
+        gap: 48px;
+      }
+
+      .hero-image {
+        width: 240px;
+        height: 240px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+      }
+
+      .speaking-embeds-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intern-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study-embeds {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+      }
+
+      .case-study-card {
+        padding: 32px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 64px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .nav-inner {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 24px 20px;
+        gap: 0;
+        border-bottom: 1px solid var(--gray-300);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .hero-tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-socials {
+        justify-content: center;
+      }
+
+      .hero-image {
+        width: 200px;
+        height: 200px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .stat-card {
+        padding: 28px 16px;
+      }
+
+      .timeline::before {
+        left: 15px;
+      }
+
+      .timeline-item {
+        padding-left: 52px;
+      }
+
+      .timeline-dot {
+        left: 8px;
+        width: 16px;
+        height: 16px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study-card {
+        padding: 24px;
+      }
+
+      .case-study-arc {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .arc-arrow {
+        display: none;
+      }
+
+      .intern-feature {
+        padding: 28px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .footer-link {
+        justify-content: center;
+      }
+
+      .events-list {
+        gap: 8px;
+      }
+
+      .event-pill {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 2.5rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ========================================
+       V3: NOISE / GRAIN TEXTURE OVERLAY
+       ======================================== */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      filter: url(#grain);
+      background: transparent;
+    }
+
+    /* ========================================
+       V3: GRADIENT MESH BACKGROUNDS
+       ======================================== */
+    .hero {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(248, 137, 58, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(248, 137, 58, 0.06) 0%, transparent 50%);
+    }
+
+    .impact {
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(248, 137, 58, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(248, 137, 58, 0.06) 0%, transparent 50%),
+        var(--gray-900);
+    }
+
+    .footer {
+      background:
+        radial-gradient(ellipse at 80% 80%, rgba(248, 137, 58, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 30%, rgba(123, 97, 255, 0.05) 0%, transparent 50%),
+        var(--dark);
+    }
+
+    /* ========================================
+       V3: MARQUEE / TICKER STRIP
+       ======================================== */
+    .marquee-strip {
+      overflow: hidden;
+      padding: 24px 0;
+      background: var(--gray-100);
+      border-top: 1px solid var(--gray-300);
+      border-bottom: 1px solid var(--gray-300);
+      position: relative;
+    }
+
+    .marquee-strip--dark {
+      background: var(--gray-900);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 40s linear infinite;
+    }
+
+    .marquee-strip:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 24px;
+      margin: 0 8px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      border: 1px solid var(--gray-300);
+      background: var(--white);
+      color: var(--gray-700);
+      filter: grayscale(1);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+
+    .marquee-item:hover {
+      filter: grayscale(0);
+      opacity: 1;
+      border-color: var(--orange);
+      color: var(--orange);
+      transform: scale(1.05);
+    }
+
+    .marquee-item--conf {
+      background: transparent;
+      border: 1px dashed var(--gray-300);
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .marquee-item--conf:hover {
+      border-style: solid;
+      border-color: var(--orange);
+      color: var(--orange);
+      background: var(--orange-light);
+    }
+
+    .marquee-strip--dark .marquee-item {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .marquee-strip--dark .marquee-item:hover {
+      background: rgba(248, 137, 58, 0.1);
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .marquee-strip--dark .marquee-item--conf {
+      background: transparent;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .marquee-strip--dark .marquee-item--conf:hover {
+      border-style: solid;
+      border-color: var(--orange);
+      color: var(--orange);
+      background: rgba(248, 137, 58, 0.1);
+    }
+
+    /* ========================================
+       V3: CUSTOM CURSOR (Desktop Only)
+       ======================================== */
+    .cursor-dot,
+    .cursor-ring {
+      display: none;
+    }
+
+    @media (min-width: 769px) and (pointer: fine) {
+      * {
+        cursor: none !important;
+      }
+
+      .cursor-dot {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        background: var(--orange);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10001;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+      }
+
+      .cursor-ring {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        border: 2px solid rgba(248, 137, 58, 0.4);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+      }
+
+      .cursor-dot.hover {
+        width: 12px;
+        height: 12px;
+        background: var(--orange-hover);
+      }
+
+      .cursor-ring.hover {
+        width: 52px;
+        height: 52px;
+        border-color: rgba(248, 137, 58, 0.6);
+      }
+    }
+
+    /* ========================================
+       V3: GSAP animation initial states
+       ======================================== */
+    .gs-hidden {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .stat-number {
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- V3: SVG Noise Filter -->
+  <svg style="position:fixed;top:0;left:0;width:0;height:0;" aria-hidden="true">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </svg>
+
+  <!-- V3: Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========================================
+       NAVIGATION (updated)
+       ======================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">dominic<span>.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" onclick="closeNav()">About</a></li>
+        <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+        <li><a href="#impact" onclick="closeNav()">Impact</a></li>
+        <li><a href="#content" onclick="closeNav()">Content</a></li>
+        <li><a href="#community" onclick="closeNav()">Community</a></li>
+        <li><a href="#speaking" onclick="closeNav()">Speaking</a></li>
+        <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       HERO
+       ======================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge fade-up">Currently building at Xverse</div>
+          <h1 class="hero-name fade-up fade-up-delay-1">Dominic Tsang</h1>
+          <p class="hero-title fade-up fade-up-delay-2">Growth & Ecosystem Manager</p>
+          <p class="hero-tagline fade-up fade-up-delay-3">Building at Xverse. I help bring Bitcoin to more people through content, community, and creative GTM.</p>
+          <div class="hero-socials fade-up fade-up-delay-4">
+            <a href="https://x.com/dominik_btc" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/domyea/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://instagram.com/official_Miyuyan2017" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.88 0 1.441 1.441 0 012.88 0z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image-wrap fade-up">
+          <img src="portfolio/headshot.jpg" alt="Dominic Tsang" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- V3: MARQUEE TICKER STRIP -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Xverse</span>
+      <span class="marquee-item">Circle</span>
+      <span class="marquee-item">CoinGecko</span>
+      <span class="marquee-item">MoonPay</span>
+      <span class="marquee-item">Starknet</span>
+      <span class="marquee-item">Stacks</span>
+      <span class="marquee-item">Google Cloud</span>
+      <span class="marquee-item">7-Eleven HK</span>
+      <span class="marquee-item">Deliveroo HK</span>
+      <span class="marquee-item marquee-item--conf">Ordinals Asia</span>
+      <span class="marquee-item marquee-item--conf">Consensus HK</span>
+      <span class="marquee-item marquee-item--conf">Taipei Blockchain Week</span>
+      <span class="marquee-item marquee-item--conf">BTC Korea</span>
+      <span class="marquee-item marquee-item--conf">Bitcoin Summit</span>
+      <!-- Duplicate set for seamless loop -->
+      <span class="marquee-item">Xverse</span>
+      <span class="marquee-item">Circle</span>
+      <span class="marquee-item">CoinGecko</span>
+      <span class="marquee-item">MoonPay</span>
+      <span class="marquee-item">Starknet</span>
+      <span class="marquee-item">Stacks</span>
+      <span class="marquee-item">Google Cloud</span>
+      <span class="marquee-item">7-Eleven HK</span>
+      <span class="marquee-item">Deliveroo HK</span>
+      <span class="marquee-item marquee-item--conf">Ordinals Asia</span>
+      <span class="marquee-item marquee-item--conf">Consensus HK</span>
+      <span class="marquee-item marquee-item--conf">Taipei Blockchain Week</span>
+      <span class="marquee-item marquee-item--conf">BTC Korea</span>
+      <span class="marquee-item marquee-item--conf">Bitcoin Summit</span>
+    </div>
+  </div>
+
+  <!-- ========================================
+       ABOUT
+       ======================================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="fade-up">
+          <span class="section-label">About</span>
+          <h2 class="section-title">A bit about me</h2>
+          <p class="about-text">
+            Building at Xverse. I help bring Bitcoin to more people through content, community, and creative GTM. Previously in biz dev, NFT projects, and digital content. Always experimenting with AI and video to make things move faster.
+          </p>
+        </div>
+        <div class="fade-up fade-up-delay-2">
+          <p class="about-skills-title">What I do</p>
+          <div class="skills-grid">
+            <span class="skill-pill">Creative Strategy</span>
+            <span class="skill-pill">GTM Strategy</span>
+            <span class="skill-pill">AI Automation</span>
+            <span class="skill-pill">AI Video Generation</span>
+            <span class="skill-pill">Video Production</span>
+            <span class="skill-pill">Community Building</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       EXPERIENCE
+       ======================================== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <span class="section-label fade-up">Experience</span>
+      <h2 class="section-title fade-up">Where I've been</h2>
+
+      <div class="timeline">
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">Jan 2024 &mdash; Present</span>
+          <h3 class="timeline-role">Growth & Ecosystem Manager</h3>
+          <p class="timeline-company">Xverse</p>
+          <p class="timeline-desc">Leading content, community, and go-to-market strategy for a community of 127k+. Grew the Asia region from the ground up and now scaling creative output with AI tools.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">2022 &mdash; 2024</span>
+          <h3 class="timeline-role">Co-Founder & Project Director</h3>
+          <p class="timeline-company">Taki Labs</p>
+          <p class="timeline-desc">Co-founded a Web3 venture. Led NFT communities, partnerships, and events including a 360+ person NFT-ticketed event in Hong Kong.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">2019 &mdash; 2023</span>
+          <h3 class="timeline-role">Senior BDM</h3>
+          <p class="timeline-company">One Heritage</p>
+          <p class="timeline-desc">Managed client relationships and built sales channels across financial services and UK property. Contributed to HKD 40M+ annual revenue.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">2016 &mdash; 2019</span>
+          <h3 class="timeline-role">Digital Content Producer</h3>
+          <p class="timeline-company">CapTV</p>
+          <p class="timeline-desc">Produced content for clients including HSBC, PlayStation, SEGA, and Ubisoft. Contributed to a channel with 380k+ followers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       GROWTH IMPACT
+       ======================================== -->
+  <section class="impact" id="impact">
+    <div class="container">
+      <span class="section-label fade-up">Impact</span>
+      <h2 class="section-title fade-up">Numbers that moved</h2>
+
+      <div class="stats-grid">
+        <div class="stat-card fade-up">
+          <div class="stat-number">50K&rarr;127K</div>
+          <div class="stat-label">X followers grown at Xverse</div>
+        </div>
+        <div class="stat-card fade-up fade-up-delay-1">
+          <div class="stat-number">2x</div>
+          <div class="stat-label">Growth in first 3 months</div>
+        </div>
+        <div class="stat-card fade-up fade-up-delay-2">
+          <div class="stat-number">360+</div>
+          <div class="stat-label">Person NFT-ticketed event</div>
+        </div>
+        <div class="stat-card fade-up fade-up-delay-3">
+          <div class="stat-number">380K+</div>
+          <div class="stat-label">Channel followers at CapTV</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION A: VIRAL CONTENT
+       (replaces Video Work — personal posts + brand content)
+       ======================================== -->
+  <section class="viral-content" id="content">
+    <div class="container">
+      <span class="section-label fade-up">Content</span>
+      <h2 class="section-title fade-up">Content that went viral</h2>
+
+      <!-- Subsection A1: Personal Posts -->
+      <h3 class="subsection-heading fade-up">Personal posts</h3>
+      <p class="subsection-desc fade-up">My own account &mdash; threads, memes, and culture content that resonated with crypto Twitter.</p>
+
+      <div class="content-grid">
+        <!-- 1. Leonidas tribute thread — 1,234 likes -->
+        <div class="video-card fade-up">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+              <a href="https://x.com/dominik_btc/status/1946646918572175529"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">Leonidas tribute thread</p>
+            <p class="video-stats">1,234 likes &middot; 394 RTs &middot; Biggest personal post</p>
+          </div>
+        </div>
+
+        <!-- 2. "Runes are dead" meme — 641 likes -->
+        <div class="video-card fade-up fade-up-delay-1">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+              <a href="https://x.com/dominik_btc/status/1960563889726480727"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"Runes are dead" &mdash; contrarian meme</p>
+            <p class="video-stats">641 likes &middot; 151 RTs</p>
+          </div>
+        </div>
+
+        <!-- 3. "What you actually do at crypto conf" — 140 likes -->
+        <div class="video-card fade-up fade-up-delay-2">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+              <a href="https://x.com/dominik_btc/status/1966090384347730201"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"What you actually do at crypto conf"</p>
+            <p class="video-stats">140 likes &middot; Culture content</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subsection A2: Brand Content -->
+      <h3 class="subsection-heading fade-up" style="margin-top: 72px;">Brand content I wrote</h3>
+      <p class="subsection-desc fade-up">Content I created for the @xverse account &mdash; videos, product launches, and brand voice posts.</p>
+
+      <!-- Row 1: Existing video embeds (kept from original) -->
+      <div class="content-grid">
+        <div class="video-card fade-up">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+              <a href="https://x.com/xverse/status/1971198156944834852"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"Wake up, stare at Xverse, go back to bed."</p>
+            <p class="video-stats">214K views &middot; 3,600 likes &middot; Best engagement</p>
+          </div>
+        </div>
+
+        <div class="video-card fade-up fade-up-delay-1">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+              <a href="https://x.com/xverse/status/1983190848130167049"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"Living the dream. Still buidling."</p>
+            <p class="video-stats">137K views &middot; Culture clip</p>
+          </div>
+        </div>
+
+        <div class="video-card fade-up fade-up-delay-2">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+              <a href="https://x.com/xverse/status/1967634759825441157"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"When he tells you he's a full-time trader:"</p>
+            <p class="video-stats">324K views &middot; Most viral</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Brand text posts as styled quote cards -->
+      <div class="quote-cards-grid fade-up" style="margin-top: 28px;">
+        <!-- "Should we add this feature?" — 906 likes -->
+        <div class="quote-card">
+          <p class="quote-card-text">"Should we add this feature?"</p>
+          <div class="quote-card-meta">
+            <span class="quote-card-handle"><a href="https://x.com/xverse" target="_blank" rel="noopener">@xverse</a></span>
+            <span class="quote-card-engagement">906 likes</span>
+          </div>
+          <a href="https://x.com/xverse/status/1971508722699845917" target="_blank" rel="noopener" class="quote-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- Lightning launch — 663 likes -->
+        <div class="quote-card">
+          <p class="quote-card-text">"Lightning is now live natively inside Xverse."</p>
+          <div class="quote-card-meta">
+            <span class="quote-card-handle"><a href="https://x.com/xverse" target="_blank" rel="noopener">@xverse</a></span>
+            <span class="quote-card-engagement">663 likes &middot; 73 RTs</span>
+          </div>
+          <a href="https://x.com/xverse/status/2033891961606967309" target="_blank" rel="noopener" class="quote-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- Xverse Card launch — 443 likes -->
+        <div class="quote-card">
+          <p class="quote-card-text">"Don't just hold Bitcoin. Live on it."</p>
+          <div class="quote-card-meta">
+            <span class="quote-card-handle"><a href="https://x.com/xverse" target="_blank" rel="noopener">@xverse</a> &middot; Xverse Card launch</span>
+            <span class="quote-card-engagement">443 likes &middot; 112 RTs</span>
+          </div>
+          <a href="https://x.com/xverse/status/2023690245016064506" target="_blank" rel="noopener" class="quote-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- Bitcoin + Memecoin — 488 likes -->
+        <div class="quote-card">
+          <p class="quote-card-text">"Bitcoin + Memecoin"</p>
+          <div class="quote-card-meta">
+            <span class="quote-card-handle"><a href="https://x.com/xverse" target="_blank" rel="noopener">@xverse</a></span>
+            <span class="quote-card-engagement">488 likes</span>
+          </div>
+          <a href="https://x.com/xverse/status/1953593332518859220" target="_blank" rel="noopener" class="quote-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION E: VIRAL MARKETING CASE STUDY
+       — Touch Grass Campaign
+       ======================================== -->
+  <section class="case-study" id="case-study">
+    <div class="container">
+      <span class="section-label fade-up">Campaigns</span>
+      <h2 class="section-title fade-up">Moments that took off</h2>
+
+      <div class="case-study-card fade-up">
+        <div class="case-study-header">
+          <div class="case-study-badge">Case Study</div>
+          <h3 class="case-study-name">Touch Grass Campaign</h3>
+          <p class="case-study-desc">We changed the Xverse app icon to include grass underneath the logo. Users discovered they were "touching grass" every time they opened their wallet. It spread organically &mdash; people posted screenshots of their home screens, reacted with memes, and Xverse leaned into it on the official account.</p>
+        </div>
+
+        <!-- Campaign arc -->
+        <div class="case-study-arc">
+          <span class="arc-step" data-step="1">Teaser post</span>
+          <span class="arc-arrow">&rarr;</span>
+          <span class="arc-step" data-step="2">Icon change</span>
+          <span class="arc-arrow">&rarr;</span>
+          <span class="arc-step" data-step="3">Community reactions</span>
+          <span class="arc-arrow">&rarr;</span>
+          <span class="arc-step" data-step="4">Xverse leans in</span>
+          <span class="arc-arrow">&rarr;</span>
+          <span class="arc-step" data-step="5">Bull run callback</span>
+        </div>
+
+        <!-- Embeds: teaser, BitGod21 reaction, callback -->
+        <div class="case-study-embeds">
+          <!-- Teaser — 195 likes -->
+          <div class="video-card">
+            <div class="video-embed">
+              <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+                <a href="https://x.com/xverse/status/1836012291273457946"></a>
+              </blockquote>
+            </div>
+            <div class="video-caption">
+              <p class="video-caption-text">The teaser</p>
+              <p class="video-stats">195 likes &middot; 70 replies &middot; "Any guesses?"</p>
+            </div>
+          </div>
+
+          <!-- BitGod21 reaction — 197 likes -->
+          <div class="video-card">
+            <div class="video-embed">
+              <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+                <a href="https://x.com/BitGod21/status/1838943468636250270"></a>
+              </blockquote>
+            </div>
+            <div class="video-caption">
+              <p class="video-caption-text">Community reaction</p>
+              <p class="video-stats">197 likes &middot; "Why is the Xverse app forcing me to touch grass?"</p>
+            </div>
+          </div>
+
+          <!-- Bull run callback — styled card (low engagement, save embed budget) -->
+          <div class="video-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="padding: 32px 24px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+              <p class="video-caption-text" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 12px; font-weight: 600;">The callback</p>
+              <p style="font-size: 1.25rem; font-weight: 700; color: var(--dark); line-height: 1.4; margin-bottom: 16px;">"Stop touching grass it is the bull run"</p>
+              <p style="font-size: 0.85rem; color: var(--gray-500); margin-bottom: 16px;">Months later, when the market turned, Xverse closed the loop with the original joke.</p>
+              <a href="https://x.com/xverse/status/1857034527077527585" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--orange); display: inline-flex; align-items: center; gap: 4px;">
+                View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+            <div class="video-caption">
+              <p class="video-stats">@xverse &middot; Bull run callback</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION C: THE INTERN BRAND
+       ======================================== -->
+  <section class="intern-section" id="intern">
+    <div class="container">
+      <span class="section-label fade-up">Brand</span>
+      <h2 class="section-title fade-up">The Intern</h2>
+
+      <div class="intern-feature fade-up">
+        <div>
+          <p class="intern-text">
+            At Xverse, I created the "Xverse Intern" persona &mdash; a recurring character on the brand's X account. It started as a joke and became a recognizable content brand. The official Xverse account posted as "the intern" dozens of times. Community members adopted it too. It's the kind of thing you can't plan in a content calendar &mdash; it emerges from actually being embedded in the community.
+          </p>
+          <p class="intern-highlight">Also produced Instagram Reels as the Intern persona &mdash; bridging the brand from X to short-form video.</p>
+        </div>
+        <div class="intern-embed-area">
+          <!-- Black Friday intern post — styled quote card (save embed budget per design plan: screenshots recommended for Intern section) -->
+          <div class="quote-card" style="margin: 0;">
+            <p class="quote-card-text" style="font-size: 1.15rem;">"Black Friday + Pay Day (Open Xverse in-app swap)" <br><span style="color: var(--orange); font-size: 0.9rem;">&#8212; Xverse Intern</span></p>
+            <div class="quote-card-meta">
+              <span class="quote-card-handle"><a href="https://x.com/xverse" target="_blank" rel="noopener">@xverse</a></span>
+              <span class="quote-card-engagement">107 likes &middot; 13 RTs</span>
+            </div>
+            <a href="https://x.com/xverse/status/1862315557896560994" target="_blank" rel="noopener" class="quote-card-link">
+              View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+
+          <!-- Consensus HK intern mention -->
+          <div class="quote-card" style="margin: 0; margin-top: 16px;">
+            <p class="quote-card-text" style="font-size: 0.95rem;">"Xverse Intern @dominik_btc & BitboyOne CEO just got their Sanwear &mdash; +50% efficiency in folding dumplings"</p>
+            <div class="quote-card-meta">
+              <span class="quote-card-handle"><a href="https://x.com/xverse" target="_blank" rel="noopener">@xverse</a> &middot; Consensus HK</span>
+              <span class="quote-card-engagement">IRL moment</span>
+            </div>
+            <a href="https://x.com/xverse/status/1892930653815214290" target="_blank" rel="noopener" class="quote-card-link">
+              View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION B: COMMUNITY PROOF
+       ======================================== -->
+  <section class="community-proof" id="community">
+    <div class="container">
+      <span class="section-label fade-up">Community</span>
+      <h2 class="section-title fade-up">What people say</h2>
+
+      <div class="testimonials-grid">
+        <!-- 1. Franc1s (Binance) -->
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">Xverse stays goated. big love to @dominik_btc and his team</p>
+          <p class="testimonial-author">Franc1s</p>
+          <a href="https://x.com/FullTiltFrancis/status/1819427677008486753" target="_blank" rel="noopener" class="testimonial-handle">@FullTiltFrancis</a>
+          <div><span class="testimonial-affiliation">Binance</span></div>
+        </div>
+
+        <!-- 2. DRZA -->
+        <div class="testimonial-card fade-up fade-up-delay-1">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">Been familiar with Dc since the Shitcoin days. Dude is nothing but positive vibes and I speak for everyone when we appreciate his presence</p>
+          <p class="testimonial-author">DRZA</p>
+          <a href="https://x.com/DRZAONECTO/status/2035153868544152053" target="_blank" rel="noopener" class="testimonial-handle">@DRZAONECTO</a>
+        </div>
+
+        <!-- 3. cpt dank -->
+        <div class="testimonial-card fade-up fade-up-delay-2">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">DAT will always be a legend in my book. Spends so much time helping others succeed. Up only</p>
+          <p class="testimonial-author">cpt dank</p>
+          <a href="https://x.com/dankerwim/status/2033252817792540935" target="_blank" rel="noopener" class="testimonial-handle">@dankerwim</a>
+        </div>
+
+        <!-- 4. Janlo VDH -->
+        <div class="testimonial-card fade-up fade-up-delay-3">
+          <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">intern is a bonafide rockstar</p>
+          <p class="testimonial-author">Janlo VDH</p>
+          <a href="https://x.com/thenewgold_btc/status/1983198291539186016" target="_blank" rel="noopener" class="testimonial-handle">@thenewgold_btc</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SPEAKING & PANELS (updated)
+       ======================================== -->
+  <section class="speaking" id="speaking">
+    <div class="container">
+      <span class="section-label fade-up">Speaking</span>
+      <h2 class="section-title fade-up">On stage across Asia</h2>
+      <p class="speaking-desc fade-up">Speaker and moderator across crypto and BTC events in Asia &mdash; from Ordinals Asia to Korea Blockchain Week.</p>
+
+      <!-- Panel tweet embeds + quote cards (1 embed + 2 quote cards to manage embed count) -->
+      <div class="speaking-embeds-grid">
+        <!-- Bitcoin Summit "Store of Culture" — 81 likes (strongest, keep as embed) -->
+        <div class="video-card fade-up">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="light" data-dnt="true">
+              <a href="https://x.com/dominik_btc/status/1961120488312217871"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">Bitcoin Summit 2025</p>
+            <p class="video-stats">81 likes &middot; "Store of Culture" panel</p>
+          </div>
+        </div>
+
+        <!-- Ordinals Asia — styled card -->
+        <div class="video-card fade-up fade-up-delay-1" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="padding: 28px 24px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <p class="video-caption-text" style="font-size: 1.1rem; margin-bottom: 12px;">Ordinals Asia 2024</p>
+            <p style="font-size: 0.95rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 16px;">Moderated panel with FarmerJoe, BuoyantCapital & drjingle on the Ordinals ecosystem.</p>
+            <a href="https://x.com/dominik_btc/status/1789536984475816261" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--orange); display: inline-flex; align-items: center; gap: 4px;">
+              View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+          <div class="video-caption">
+            <p class="video-stats">Moderator &middot; 27 likes</p>
+          </div>
+        </div>
+
+        <!-- Korea Blockchain Week — styled card -->
+        <div class="video-card fade-up fade-up-delay-2" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="padding: 28px 24px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <p class="video-caption-text" style="font-size: 1.1rem; margin-bottom: 12px;">Korea Blockchain Week 2024</p>
+            <p style="font-size: 0.95rem; color: var(--gray-700); line-height: 1.6; margin-bottom: 16px;">First panel in Korea about the BTC ecosystem &mdash; representing Xverse on the Korean stage.</p>
+            <a href="https://x.com/dominik_btc/status/1830468343855501714" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--orange); display: inline-flex; align-items: center; gap: 4px;">
+              View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+          <div class="video-caption">
+            <p class="video-stats">Speaker &middot; BTC Korea</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event pills list (kept from original) -->
+      <div class="events-list fade-up">
+        <span class="event-pill">Ordinals Asia</span>
+        <span class="event-pill">Bitcoin Summit</span>
+        <span class="event-pill">Taipei Blockchain Week</span>
+        <span class="event-pill">BTC Korea</span>
+        <span class="event-pill">Consensus Hong Kong</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER / CONTACT
+       ======================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-inner">
+        <h2 class="footer-title fade-up">Let's <span>connect</span></h2>
+        <p class="footer-subtitle fade-up">Always happy to chat about Bitcoin, content, or whatever you're building.</p>
+
+        <div class="footer-links fade-up">
+          <a href="mailto:domyea@taki-labs.io" class="footer-link footer-link--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email me
+          </a>
+          <a href="https://x.com/dominik_btc" target="_blank" rel="noopener" class="footer-link footer-link--ghost">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Follow on X
+          </a>
+          <a href="https://www.linkedin.com/in/domyea/" target="_blank" rel="noopener" class="footer-link footer-link--ghost">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="footer-divider"></div>
+        <p class="footer-bottom">Dominic Tsang &middot; Hong Kong</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       V3: CDN SCRIPTS (GSAP + CountUp)
+       ======================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/countup.js@2.8.0/dist/countUp.umd.min.js"></script>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    // =============================================
+    // NAV SCROLL SHADOW (kept from v2)
+    // =============================================
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // =============================================
+    // MOBILE NAV TOGGLE (kept from v2)
+    // =============================================
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    function closeNav() {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+    }
+
+    // =============================================
+    // V3: GSAP SCROLLTRIGGER ANIMATIONS
+    // =============================================
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Fade + slide up every section as it scrolls into view
+    // Replace the old IntersectionObserver approach with GSAP
+    const fadeEls = document.querySelectorAll('.fade-up');
+    fadeEls.forEach(el => {
+      // Remove the old CSS-based initial state so GSAP controls it
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(40px)';
+      el.style.transition = 'none';
+
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true
+        }
+      });
+    });
+
+    // Stagger animation for card grids
+    const cardGrids = [
+      '.stats-grid .stat-card',
+      '.content-grid .video-card',
+      '.testimonials-grid .testimonial-card',
+      '.quote-cards-grid .quote-card',
+      '.speaking-embeds-grid .video-card',
+      '.case-study-embeds .video-card',
+      '.events-list .event-pill',
+      '.skills-grid .skill-pill'
+    ];
+
+    cardGrids.forEach(selector => {
+      const cards = document.querySelectorAll(selector);
+      if (cards.length > 0) {
+        cards.forEach(card => {
+          // Reset any inline GSAP transforms from fade-up
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(30px)';
+          card.style.transition = 'none';
+        });
+
+        gsap.to(cards, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cards[0].parentElement,
+            start: 'top 85%',
+            once: true
+          }
+        });
+      }
+    });
+
+    // Scale-up effect on stat numbers
+    document.querySelectorAll('.stat-number').forEach(num => {
+      gsap.from(num, {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'back.out(1.7)',
+        scrollTrigger: {
+          trigger: num,
+          start: 'top 90%',
+          once: true
+        }
+      });
+    });
+
+    // =============================================
+    // V3: NUMBER COUNTER ANIMATIONS (CountUp.js)
+    // =============================================
+    (function initCounters() {
+      const CountUp = countUp.CountUp;
+
+      // Define counter targets: map stat-number elements to their numeric values
+      const statCards = document.querySelectorAll('.stat-card');
+
+      statCards.forEach(card => {
+        const numEl = card.querySelector('.stat-number');
+        if (!numEl) return;
+
+        const text = numEl.textContent.trim();
+
+        // Parse different stat formats
+        // "50K→127K" — animate as "127" with prefix "50K→" and suffix "K"
+        // "2x" — animate as "2" with suffix "x"
+        // "360+" — animate as "360" with suffix "+"
+        // "380K+" — animate as "380" with suffix "K+"
+
+        let endVal, prefix = '', suffix = '', decimals = 0;
+
+        if (text.includes('→')) {
+          // e.g. "50K→127K"
+          const parts = text.split('→');
+          prefix = parts[0] + '→';
+          const rightPart = parts[1];
+          endVal = parseFloat(rightPart.replace(/[^0-9.]/g, ''));
+          suffix = rightPart.replace(/[0-9.]/g, '');
+        } else {
+          endVal = parseFloat(text.replace(/[^0-9.]/g, ''));
+          // Determine suffix by removing the number
+          const numStr = text.match(/[0-9.]+/);
+          if (numStr) {
+            const idx = text.indexOf(numStr[0]);
+            prefix = text.substring(0, idx);
+            suffix = text.substring(idx + numStr[0].length);
+          }
+        }
+
+        if (isNaN(endVal)) return;
+
+        // Create a span for the animated number part
+        const countSpan = document.createElement('span');
+        countSpan.className = 'count-target';
+        numEl.textContent = '';
+
+        if (prefix) {
+          const prefixSpan = document.createElement('span');
+          prefixSpan.textContent = prefix;
+          numEl.appendChild(prefixSpan);
+        }
+        numEl.appendChild(countSpan);
+        if (suffix) {
+          const suffixSpan = document.createElement('span');
+          suffixSpan.textContent = suffix;
+          numEl.appendChild(suffixSpan);
+        }
+
+        countSpan.textContent = '0';
+
+        const counter = new CountUp(countSpan, endVal, {
+          startVal: 0,
+          duration: 2.5,
+          useEasing: true,
+          useGrouping: true,
+          decimal: '.',
+          decimalPlaces: decimals,
+          enableScrollSpy: true,
+          scrollSpyDelay: 200,
+          scrollSpyOnce: true
+        });
+
+        if (!counter.error) {
+          // CountUp enableScrollSpy handles the triggering
+        }
+      });
+    })();
+
+    // =============================================
+    // V3: CUSTOM CURSOR (Desktop Only)
+    // =============================================
+    (function initCursor() {
+      const dot = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+
+      // Only enable on non-touch, wide screens
+      if (!dot || !ring) return;
+      if (window.innerWidth < 769 || !window.matchMedia('(pointer: fine)').matches) return;
+
+      let mouseX = -100, mouseY = -100;
+      let ringX = -100, ringY = -100;
+
+      document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
+      });
+
+      // Smooth follow for ring
+      function animateRing() {
+        ringX += (mouseX - ringX) * 0.15;
+        ringY += (mouseY - ringY) * 0.15;
+        ring.style.left = ringX + 'px';
+        ring.style.top = ringY + 'px';
+        requestAnimationFrame(animateRing);
+      }
+      animateRing();
+
+      // Expand on hover over interactive elements
+      const hoverTargets = document.querySelectorAll('a, button, .skill-pill, .event-pill, .stat-card, .video-card, .testimonial-card, .quote-card');
+      hoverTargets.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          dot.classList.add('hover');
+          ring.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          dot.classList.remove('hover');
+          ring.classList.remove('hover');
+        });
+      });
+
+      // Hide cursor when leaving window
+      document.addEventListener('mouseleave', () => {
+        dot.style.opacity = '0';
+        ring.style.opacity = '0';
+      });
+      document.addEventListener('mouseenter', () => {
+        dot.style.opacity = '1';
+        ring.style.opacity = '1';
+      });
+    })();
+
+    // =============================================
+    // V3: SMOOTH SCROLL for anchor links
+    // =============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  <!-- ========================================
+       TWITTER EMBED — must be LAST script
+       ======================================== -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</body>
+</html>
