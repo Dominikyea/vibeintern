@@ -351,8 +351,8 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 1fr;
+      gap: 40px;
       align-items: start;
     }
 
@@ -387,7 +387,7 @@
       transition: all 0.2s ease;
     }
 
-    .skill-pill:nth-child(1) { background: var(--orange-light); color: #2E7D5A; }
+    .skill-pill:nth-child(1) { background: var(--orange-light); color: #C4600A; }
     .skill-pill:nth-child(2) { background: var(--purple-light); color: #5A42CC; }
     .skill-pill:nth-child(3) { background: var(--blue-light); color: #0260A8; }
     .skill-pill:nth-child(4) { background: #FFF4E5; color: #9A5C00; }
@@ -540,7 +540,7 @@
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 8px;
-      background: linear-gradient(135deg, var(--orange), #7DCDB5);
+      background: linear-gradient(135deg, var(--orange), #FFB347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -591,6 +591,21 @@
       border-radius: var(--border-radius);
       overflow: hidden;
       transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card > div:first-child {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-card > div:first-child > div:last-child {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .video-card:hover {
@@ -908,7 +923,7 @@
     .quote-card-engagement {
       font-size: 0.85rem;
       font-weight: 700;
-      background: linear-gradient(135deg, var(--orange), #7DCDB5);
+      background: linear-gradient(135deg, var(--orange), #FFB347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1232,7 +1247,7 @@
     }
 
     .footer-title span {
-      background: linear-gradient(135deg, var(--orange), #7DCDB5);
+      background: linear-gradient(135deg, var(--orange), #FFB347);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1422,7 +1437,7 @@
       }
 
       .hero {
-        padding-top: 150px;
+        padding-top: 120px;
       }
 
       .hero-inner {
@@ -1569,104 +1584,6 @@
     }
 
     /* ========================================
-       V3: MARQUEE / TICKER STRIP
-       ======================================== */
-    .marquee-strip {
-      overflow: hidden;
-      padding: 24px 0;
-      background: var(--gray-100);
-      border-top: 1px solid var(--gray-300);
-      border-bottom: 1px solid var(--gray-300);
-      position: relative;
-    }
-
-    .marquee-strip--dark {
-      background: var(--gray-900);
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marquee-scroll 40s linear infinite;
-    }
-
-    .marquee-strip:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes marquee-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .marquee-item {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 24px;
-      margin: 0 8px;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-      border: 1px solid var(--gray-300);
-      background: var(--white);
-      color: var(--gray-700);
-      filter: grayscale(1);
-      opacity: 0.6;
-      transition: all 0.3s ease;
-    }
-
-    .marquee-item:hover {
-      filter: grayscale(0);
-      opacity: 1;
-      border-color: var(--orange);
-      color: var(--orange);
-      transform: scale(1.05);
-    }
-
-    .marquee-item--conf {
-      background: transparent;
-      border: 1px dashed var(--gray-300);
-      color: var(--gray-500);
-      font-weight: 500;
-    }
-
-    .marquee-item--conf:hover {
-      border-style: solid;
-      border-color: var(--orange);
-      color: var(--orange);
-      background: var(--orange-light);
-    }
-
-    .marquee-strip--dark .marquee-item {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .marquee-strip--dark .marquee-item:hover {
-      background: rgba(80, 175, 149, 0.1);
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-
-    .marquee-strip--dark .marquee-item--conf {
-      background: transparent;
-      border: 1px dashed rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-    .marquee-strip--dark .marquee-item--conf:hover {
-      border-style: solid;
-      border-color: var(--orange);
-      color: var(--orange);
-      background: rgba(80, 175, 149, 0.1);
-    }
-
-    /* ========================================
        V3: CUSTOM CURSOR (Desktop Only)
        ======================================== */
     .cursor-dot,
@@ -1785,7 +1702,7 @@
     }
 
     .partnership-stat-number {
-      font-size: 1.5rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 800;
       color: var(--dark);
       letter-spacing: -0.02em;
@@ -1795,6 +1712,18 @@
       font-size: 0.8rem;
       color: var(--gray-500);
       margin-top: 2px;
+    }
+
+    .stat-number, .partnership-stat-number {
+      text-shadow: 0 0 20px rgba(80, 175, 149, 0.3), 0 0 40px rgba(80, 175, 149, 0.1);
+    }
+
+    .brand-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      margin-left: 8px;
+      letter-spacing: 0.02em;
     }
 
     /* Campaign / Brand Content cards in carousel */
@@ -1882,6 +1811,12 @@
       text-decoration: underline;
     }
 
+    /* Reorderable sections for URL routing */
+    .reorderable {
+      display: flex;
+      flex-direction: column;
+    }
+
     @media (max-width: 768px) {
       .brand-wall {
         grid-template-columns: repeat(3, 1fr);
@@ -1907,9 +1842,6 @@
 </head>
 <body>
 
-  <!-- Tether top bar -->
-  <div style="background:#50AF95;color:white;text-align:center;padding:6px;font-size:0.75rem;font-weight:600;position:fixed;top:0;left:0;right:0;z-index:1001;">Tailored for Tether</div>
-
   <!-- V3: SVG Noise Filter -->
   <svg style="position:fixed;top:0;left:0;width:0;height:0;" aria-hidden="true">
     <filter id="grain">
@@ -1922,6 +1854,8 @@
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
+  <div style="background:#50AF95;color:white;text-align:center;padding:6px;font-size:0.75rem;font-weight:600;position:fixed;top:0;left:0;right:0;z-index:1001;">Tailored for Tether</div>
+
   <!-- ========================================
        NAVIGATION (updated)
        ======================================== -->
@@ -1930,10 +1864,10 @@
       <a href="#hero" class="nav-logo">dominic<span>.</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about" onclick="closeNav()">About</a></li>
+        <li><a href="#partnerships" onclick="closeNav()">Partnerships</a></li>
+        <li><a href="#campaigns" onclick="closeNav()">Campaigns</a></li>
         <li><a href="#brand-content" onclick="closeNav()">Content</a></li>
         <li><a href="#intern" onclick="closeNav()">The Intern</a></li>
-        <li><a href="#campaigns" onclick="closeNav()">Campaigns</a></li>
-        <li><a href="#partnerships" onclick="closeNav()">Partnerships</a></li>
         <li><a href="#contact" onclick="closeNav()">Contact</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -1951,7 +1885,7 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-badge fade-up">Currently building at Xverse</div>
+          <div class="hero-badge fade-up">Cooking</div>
           <h1 class="hero-name fade-up fade-up-delay-1">Dominic Tsang</h1>
           <p class="hero-title fade-up fade-up-delay-2">Social Media & Content Lead</p>
           <p class="hero-tagline fade-up fade-up-delay-3">Growing communities through content, brand voice, and culture. 50K to 127K followers organically.</p>
@@ -1990,39 +1924,6 @@
     </div>
   </div>
 
-  <!-- V3: MARQUEE TICKER STRIP -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-item">6M+ impressions/year</span>
-      <span class="marquee-item">127K+ followers grown</span>
-      <span class="marquee-item">7.9% peak engagement</span>
-      <span class="marquee-item">100+ KOLs managed</span>
-      <span class="marquee-item">20+ partner campaigns</span>
-      <span class="marquee-item marquee-item--conf">Ordinals Asia</span>
-      <span class="marquee-item marquee-item--conf">ETH HK</span>
-      <span class="marquee-item marquee-item--conf">Bitcoin Summit</span>
-      <span class="marquee-item marquee-item--conf">BTC Korea</span>
-      <span class="marquee-item marquee-item--conf">Taipei Blockchain Week</span>
-      <span class="marquee-item">324K peak views</span>
-      <span class="marquee-item">5+ conferences spoken</span>
-      <span class="marquee-item">Bilingual EN/ZH</span>
-      <!-- Duplicate set for seamless loop -->
-      <span class="marquee-item">6M+ impressions/year</span>
-      <span class="marquee-item">127K+ followers grown</span>
-      <span class="marquee-item">7.9% peak engagement</span>
-      <span class="marquee-item">100+ KOLs managed</span>
-      <span class="marquee-item">20+ partner campaigns</span>
-      <span class="marquee-item marquee-item--conf">Ordinals Asia</span>
-      <span class="marquee-item marquee-item--conf">ETH HK</span>
-      <span class="marquee-item marquee-item--conf">Bitcoin Summit</span>
-      <span class="marquee-item marquee-item--conf">BTC Korea</span>
-      <span class="marquee-item marquee-item--conf">Taipei Blockchain Week</span>
-      <span class="marquee-item">324K peak views</span>
-      <span class="marquee-item">5+ conferences spoken</span>
-      <span class="marquee-item">Bilingual EN/ZH</span>
-    </div>
-  </div>
-
   <!-- ========================================
        ABOUT
        ======================================== -->
@@ -2033,18 +1934,18 @@
           <span class="section-label">About</span>
           <h2 class="section-title">A bit about me</h2>
           <p class="about-text">
-            Building at Xverse. I help bring Bitcoin to more people through content, community, and creative GTM. Previously in biz dev, NFT projects, and digital content. Always experimenting with AI and video to make things move faster.
+            8+ years in social media, content marketing, KOL management, partnerships, and community growth. Crypto, web3, video production, biz dev. I make content that goes viral, close deals with brands you've heard of, and use AI to scale my workflow.
           </p>
         </div>
         <div class="fade-up fade-up-delay-2">
           <p class="about-skills-title">What I do</p>
           <div class="skills-grid">
-            <span class="skill-pill">Creative Strategy</span>
-            <span class="skill-pill">GTM Strategy</span>
+            <span class="skill-pill">Social Media Marketing</span>
+            <span class="skill-pill">KOL Management</span>
+            <span class="skill-pill">Content Strategy</span>
+            <span class="skill-pill">Strategic Partnerships</span>
             <span class="skill-pill">AI Automation</span>
-            <span class="skill-pill">AI Video Generation</span>
-            <span class="skill-pill">Video Production</span>
-            <span class="skill-pill">Community Building</span>
+            <span class="skill-pill">Community Growth</span>
           </div>
         </div>
       </div>
@@ -2052,29 +1953,105 @@
   </section>
 
   <!-- ========================================
-       REORDERED SECTIONS FOR TETHER (Content focus)
-       1. Brand Content
-       2. The Intern
-       3. Campaigns
-       4. Partnerships & KOL
+       REORDERABLE SECTIONS WRAPPER
        ======================================== -->
+  <div class="reorderable" id="reorderable">
 
   <!-- ========================================
-       SECTION 1: BRAND CONTENT (lead)
+       SECTION 1: PARTNERSHIPS & KOL MANAGEMENT
        ======================================== -->
-  <section class="viral-content" id="brand-content" style="padding: var(--section-padding) 0;">
+  <section class="community-proof" id="partnerships" data-section-order="1" data-content-order="4" style="padding: var(--section-padding) 0;">
     <div class="container">
-      <span class="section-label fade-up">Brand Content</span>
-      <h2 class="section-title fade-up">Content I wrote <span style="font-size: 0.45em; font-weight: 500; color: var(--gray-500); margin-left: 8px;">50K &rarr; 127K followers &middot; 6M+ impressions/year &middot; 7.9% peak engagement</span></h2>
+      <span class="section-label fade-up">Partnerships & KOL</span>
+      <h2 class="section-title fade-up">Ecosystem partnerships</h2>
+      <p class="section-subtitle fade-up">Managed partner relationships across wallets, L2s, infrastructure, media, and community projects. Click any name to see the collaboration.</p>
+
+      <div class="brand-wall fade-up">
+        <a href="https://x.com/xverse/status/2036099600269062511" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/google.svg" alt="Google"></a>
+        <a href="https://x.com/xverse/status/1927394394916753896" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/starknet.svg" alt="Starknet"></a>
+        <a href="https://x.com/xverse/status/1745652765966438869" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/ledger.svg" alt="Ledger"></a>
+        <a href="https://x.com/xverse/status/1981358452929942002" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/usdc.svg" alt="USDC"><span class="brand-label">USDC</span></a>
+        <a href="https://x.com/xverse/status/1990439194993611241" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/wbtc.svg" alt="WBTC"><span class="brand-label">WBTC</span></a>
+        <a href="https://x.com/coingecko/status/1943294285518115207" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/coingecko.svg" alt="CoinGecko"></a>
+        <a href="https://x.com/xverse/status/2033891961606967309" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/spark.svg" alt="Spark"></a>
+        <a href="https://x.com/xverse/status/1906695033887330575" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/bob.svg?v=2" alt="BOB"></a>
+        <a href="https://x.com/xverse/status/1960009309192130865" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/lombard.png" alt="Lombard" style="height: 32px;"></a>
+        <a href="https://x.com/xverse/status/1887478307400393098" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/keystone.png" alt="Keystone"><span class="brand-label">Keystone</span></a>
+        <a href="https://x.com/xverse/status/1935326199808704921" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/moonpay.svg" alt="MoonPay"></a>
+        <a href="https://x.com/xverse/status/1933162474280567050" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/stacks.svg" alt="Stacks"><span class="brand-label">Stacks</span></a>
+      </div>
+
+      <div class="partnership-stats fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+        <div class="partnership-stat">
+          <span class="partnership-stat-number">2M+</span>
+          <span class="partnership-stat-label">Product users</span>
+        </div>
+        <div class="partnership-stat">
+          <span class="partnership-stat-number">127K+</span>
+          <span class="partnership-stat-label">Followers grown organically</span>
+        </div>
+        <div class="partnership-stat">
+          <span class="partnership-stat-number">80M+</span>
+          <span class="partnership-stat-label">Impressions</span>
+        </div>
+        <div class="partnership-stat">
+          <span class="partnership-stat-number">100+</span>
+          <span class="partnership-stat-label">KOLs managed globally</span>
+        </div>
+        <div class="partnership-stat">
+          <span class="partnership-stat-number">50+</span>
+          <span class="partnership-stat-label">Partnerships</span>
+        </div>
+        <div class="partnership-stat">
+          <span class="partnership-stat-number">40K+</span>
+          <span class="partnership-stat-label">Campaign registrations</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 2: CAMPAIGNS
+       ======================================== -->
+  <section class="viral-content" id="campaigns" data-section-order="2" data-content-order="3" style="background: var(--gray-50);">
+    <div class="container">
+      <span class="section-label fade-up">Campaigns</span>
+      <h2 class="section-title fade-up">Campaigns</h2>
 
       <div class="carousel-wrapper">
-        <div class="carousel-track" data-carousel="brand-content">
+        <div class="carousel-track" data-carousel="campaigns">
 
-        <!-- 1. Xverse Card Launch -->
-        <div class="campaign-card fade-up">
+        <!-- 1. What The Fork -->
+        <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
+          <img src="../img/wtf-logo.svg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 140px; height: 140px; opacity: 0.08; pointer-events: none;">
+          <span class="campaign-card-badge">Creative Campaign</span>
+          <h3 class="campaign-card-title">What The Fork</h3>
+          <p class="campaign-card-desc">Bitcoin soft-fork advocacy campaign featuring a dedicated website, merch line, and community activations.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">61.8K</span>
+              <span class="campaign-card-stat-label">Launch impressions</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">4,246</span>
+              <span class="campaign-card-stat-label">Wallets signed</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">35.67</span>
+              <span class="campaign-card-stat-label">BTC supported</span>
+            </div>
+          </div>
+          <a href="https://whatthefork.wtf/" target="_blank" rel="noopener" class="campaign-card-link">
+            View Campaign <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- 2. Xverse Card Launch -->
+        <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
+          <img src="../img/xverse-card.png" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 180px; opacity: 0.1; pointer-events: none; transform: rotate(-10deg);">
           <span class="campaign-card-badge">Product Launch</span>
           <h3 class="campaign-card-title">Xverse Card Launch</h3>
-          <p class="campaign-card-desc">Full GTM for Bitcoin's first self-custody spending card. AI video teasers, KOL seeding, SEO landing pages, in-app push.</p>
+          <p class="campaign-card-desc">Full GTM for Bitcoin's first self-custody spending card. Produced AI video teasers, KOL seeding, SEO landing pages, in-app push.</p>
           <div class="campaign-card-stats">
             <div class="campaign-card-stat">
               <span class="campaign-card-stat-num">3K+</span>
@@ -2094,22 +2071,130 @@
           </a>
         </div>
 
-        <!-- 2. "Should we add this feature?" -->
+        <!-- 3. Native Staking -->
+        <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
+          <img src="../img/brands/wbtc.svg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 120px; height: 120px; opacity: 0.08; pointer-events: none;">
+          <span class="campaign-card-badge">GTM Campaign</span>
+          <h3 class="campaign-card-title">Native Staking Launch</h3>
+          <p class="campaign-card-desc">Planned GTM content wave for native BTC staking launch. Blog, video, and AI-generated content including Starknet free gas awareness video.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">Top 10</span>
+              <span class="campaign-card-stat-label">BTC Staked on Starknet</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">Top 5</span>
+              <span class="campaign-card-stat-label">By delegator count</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">1 month</span>
+              <span class="campaign-card-stat-label">Time to ranking</span>
+            </div>
+          </div>
+          <a href="https://x.com/xverse/status/2028259552286924858" target="_blank" rel="noopener" class="campaign-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- 4. Starknet Integration -->
+        <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
+          <img src="../img/brands/starknet.svg" alt="" style="position: absolute; right: 30px; bottom: -60px; width: 160px; height: 160px; opacity: 0.07; pointer-events: none;">
+          <span class="campaign-card-badge">Partner Campaign</span>
+          <h3 class="campaign-card-title">Starknet Integration</h3>
+          <p class="campaign-card-desc">Co-managed cross-team GTM with Starknet across marketing, product, and engineering. Drafted content, coordinated timelines, and arranged visuals.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">1,713</span>
+              <span class="campaign-card-stat-label">Community posts on Radar</span>
+            </div>
+          </div>
+          <a href="https://x.com/xverse/status/1940033066556412214" target="_blank" rel="noopener" class="campaign-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- 5. Xclusive -->
+        <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
+          <img src="../img/xverse-logo-full.png" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 160px; opacity: 0.07; pointer-events: none;">
+          <span class="campaign-card-badge">Partnership Campaign</span>
+          <h3 class="campaign-card-title">Xclusive</h3>
+          <p class="campaign-card-desc">Managed partner giveaways across 10+ projects, driving 40K+ registrations to the Xverse ecosystem.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">40K+</span>
+              <span class="campaign-card-stat-label">Registrations</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">10+</span>
+              <span class="campaign-card-stat-label">Partners</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">19.6K</span>
+              <span class="campaign-card-stat-label">Top post impressions</span>
+            </div>
+          </div>
+          <a href="https://portfolio.xverse.app/xclusive" target="_blank" rel="noopener" class="campaign-card-link">
+            View Campaign <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- 6. Touch Grass -->
+        <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
+          <img src="../img/touch-grass-logo.jpg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 120px; height: 120px; opacity: 0.15; pointer-events: none; border-radius: 20px;">
+          <span class="campaign-card-badge">Product Marketing</span>
+          <h3 class="campaign-card-title">Touch Grass</h3>
+          <p class="campaign-card-desc">Grew grass on the Xverse app icon as a product Easter egg. Community spotted it organically and shared across X.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">50+</span>
+              <span class="campaign-card-stat-label">Organic community posts</span>
+            </div>
+          </div>
+          <a href="https://x.com/BitGod21/status/1838943468636250270" target="_blank" rel="noopener" class="campaign-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" onclick="scrollCarousel('campaigns', -1)" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn" onclick="scrollCarousel('campaigns', 1)" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SECTION 3: BRAND CONTENT
+       ======================================== -->
+  <section class="viral-content" id="brand-content" data-section-order="3" data-content-order="1" style="padding: var(--section-padding) 0;">
+    <div class="container">
+      <span class="section-label fade-up">Brand Content</span>
+      <h2 class="section-title fade-up">Content & Creative</h2>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-track" data-carousel="brand-content">
+
+        <!-- 1. "Should we add this feature?" -->
         <div class="campaign-card fade-up">
+          <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
+            <img src="../img/should-we-add.png" alt="Should we add this feature?" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+          </div>
           <span class="campaign-card-badge">Community Engagement</span>
           <h3 class="campaign-card-title">"Should we add this feature?"</h3>
+          <p class="campaign-card-desc">X's sensitive content blocker, but instead of sensitive content it shields you from unexplainable portfolio losses.</p>
           <div class="campaign-card-stats">
             <div class="campaign-card-stat">
               <span class="campaign-card-stat-num">965</span>
               <span class="campaign-card-stat-label">Likes</span>
             </div>
             <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">1,354</span>
-              <span class="campaign-card-stat-label">Reposts</span>
-            </div>
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">19.6%</span>
-              <span class="campaign-card-stat-label">Like rate</span>
+              <span class="campaign-card-stat-num">160K</span>
+              <span class="campaign-card-stat-label">Views</span>
             </div>
           </div>
           <a href="https://x.com/xverse/status/1971508722699845917" target="_blank" rel="noopener" class="campaign-card-link">
@@ -2119,17 +2204,20 @@
 
         <!-- 3. Xverse Undo (April Fools) -->
         <div class="campaign-card fade-up">
+          <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
+            <img src="../img/xverse-undo.jpg" alt="Xverse Undo" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+          </div>
           <span class="campaign-card-badge">Creative Content</span>
           <h3 class="campaign-card-title">Xverse Undo</h3>
           <p class="campaign-card-desc">April Fools product announcement. "Bad swap? Overpaid for a JPEG? Undo it." Timed perfectly for crypto Twitter.</p>
           <div class="campaign-card-stats">
             <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">33.5K</span>
-              <span class="campaign-card-stat-label">Impressions</span>
+              <span class="campaign-card-stat-num">315</span>
+              <span class="campaign-card-stat-label">Likes</span>
             </div>
             <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">1,360</span>
-              <span class="campaign-card-stat-label">Engagements</span>
+              <span class="campaign-card-stat-num">33K</span>
+              <span class="campaign-card-stat-label">Views</span>
             </div>
             <div class="campaign-card-stat">
               <span class="campaign-card-stat-num">Apr 1</span>
@@ -2137,6 +2225,75 @@
             </div>
           </div>
           <a href="https://x.com/xverse/status/1907053112785014787" target="_blank" rel="noopener" class="campaign-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- 4. Living the dream -->
+        <div class="campaign-card fade-up">
+          <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
+            <img src="../img/living-the-dream.jpg" alt="Living the dream" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+          </div>
+          <span class="campaign-card-badge">Video Content</span>
+          <h3 class="campaign-card-title">Living the dream. Still buidling.</h3>
+          <p class="campaign-card-desc">Crypto trader living the pre-rich life. TikTok-style day-in-the-life video that hit different.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">1,044</span>
+              <span class="campaign-card-stat-label">Likes</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">136K</span>
+              <span class="campaign-card-stat-label">Views</span>
+            </div>
+          </div>
+          <a href="https://x.com/xverse/status/1983190848130167049" target="_blank" rel="noopener" class="campaign-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- 5. Breaking -->
+        <div class="campaign-card fade-up">
+          <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
+            <img src="../img/breaking.jpg" alt="Breaking" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+          </div>
+          <span class="campaign-card-badge">Video Content</span>
+          <h3 class="campaign-card-title">Breaking:</h3>
+          <p class="campaign-card-desc">TikTok-style viral video content. Short, punchy, designed to stop the scroll.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">500</span>
+              <span class="campaign-card-stat-label">Likes</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">141K</span>
+              <span class="campaign-card-stat-label">Views</span>
+            </div>
+          </div>
+          <a href="https://x.com/xverse/status/1986116644893315322" target="_blank" rel="noopener" class="campaign-card-link">
+            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+
+        <!-- 6. Bitcoin Conf -->
+        <div class="campaign-card fade-up">
+          <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
+            <img src="../img/bitcoin-conf.jpg" alt="Bitcoin Conference" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+          </div>
+          <span class="campaign-card-badge">Video Content</span>
+          <h3 class="campaign-card-title">What are we breaking today?</h3>
+          <p class="campaign-card-desc">Unexpected random video with a CTA for engagement. Showed up, asked the question, let the replies do the work.</p>
+          <div class="campaign-card-stats">
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">307</span>
+              <span class="campaign-card-stat-label">Likes</span>
+            </div>
+            <div class="campaign-card-stat">
+              <span class="campaign-card-stat-num">8.5K</span>
+              <span class="campaign-card-stat-label">Views</span>
+            </div>
+          </div>
+          <a href="https://x.com/xverse/status/1927164941951291573" target="_blank" rel="noopener" class="campaign-card-link">
             View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
         </div>
@@ -2155,9 +2312,9 @@
   </section>
 
   <!-- ========================================
-       SECTION 2: THE INTERN
+       SECTION 4: THE INTERN
        ======================================== -->
-  <section class="intern-section" id="intern" style="background: var(--gray-50);">
+  <section class="intern-section" id="intern" data-section-order="4" data-content-order="2" style="background: var(--gray-50);">
     <div class="container">
       <span class="section-label fade-up">The Intern</span>
       <h2 class="section-title fade-up">Personal brand & content</h2>
@@ -2166,36 +2323,30 @@
       <div class="carousel-wrapper">
         <div class="carousel-track" data-carousel="intern">
 
-        <!-- 1. Wake up, stare at Xverse — 4,418 likes -->
-        <div class="video-card fade-up">
-          <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
-            <img src="../img/wake-up-xverse.jpg" alt="Wake up, stare at Xverse, go back to bed" style="width: 100%; height: 220px; object-fit: cover; display: block;">
-            <div style="padding: 20px 24px;">
-              <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 6px; font-weight: 600;">@xverse</p>
-              <p style="font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.5; margin-bottom: 12px;">"Wake up, stare at Xverse, go back to bed."</p>
+        <!-- 1. The Intern Persona — combined card -->
+        <div class="video-card fade-up" style="min-width: 420px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; border-radius: 12px; overflow: hidden; background: var(--gray-50);">
+            <!-- Left: Wake up stare photo -->
+            <div style="position: relative;">
+              <img src="../img/wake-up-xverse.jpg" alt="Wake up, stare at Xverse" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+                <p style="font-size: 0.8rem; font-weight: 600; color: white; line-height: 1.4;">"Wake up, stare at Xverse, go back to bed."</p>
+                <p style="font-size: 0.7rem; color: rgba(255,255,255,0.7); margin-top: 4px;">4,418 likes &middot; 358 RTs</p>
+              </div>
+            </div>
+            <!-- Right: Dom's boxers context -->
+            <div style="padding: 24px 20px; display: flex; flex-direction: column; justify-content: center; background: var(--dark); color: white;">
+              <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange); margin-bottom: 8px; font-weight: 600;">@xverse &middot; Intern Persona</p>
+              <p style="font-size: 1rem; font-weight: 700; line-height: 1.4; margin-bottom: 10px;">"Dom's boxers" &mdash; #1 post in Xverse history</p>
+              <p style="font-size: 0.8rem; color: rgba(255,255,255,0.6); line-height: 1.5; margin-bottom: 14px;">A joke post outperformed every product launch, partnership, and campaign in the account's history. Confirmed there's an elephant on the boxer.</p>
               <a href="https://x.com/xverse/status/1971198156944834852" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--orange); display: inline-flex; align-items: center; gap: 4px;">
                 View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
             </div>
           </div>
           <div class="video-caption">
-            <p class="video-caption-text">"Wake up, stare at Xverse"</p>
-            <p class="video-stats">4,418 likes &middot; 358 RTs &middot; Top Intern post</p>
-          </div>
-        </div>
-
-        <!-- 2. Dom's Boxers — top post in Xverse history -->
-        <div class="video-card fade-up">
-          <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
-            <div style="padding: 32px 24px; min-height: 220px; display: flex; flex-direction: column; justify-content: center;">
-              <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 6px; font-weight: 600;">@xverse &middot; Intern persona</p>
-              <p style="font-size: 1.15rem; font-weight: 600; color: var(--dark); line-height: 1.5; margin-bottom: 12px;">"Dom's boxers" &mdash; labeled the TOP performing post in Xverse history by leadership</p>
-              <p style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.5;">The Intern brand became so embedded that a joke post outperformed every product launch, partnership announcement, and campaign in the account's history.</p>
-            </div>
-          </div>
-          <div class="video-caption">
-            <p class="video-caption-text">#1 post in Xverse history</p>
-            <p class="video-stats">Confirmed by leadership at all-hands</p>
+            <p class="video-caption-text">The Intern Persona</p>
+            <p class="video-stats">Top Intern post + #1 post in Xverse history</p>
           </div>
         </div>
 
@@ -2205,15 +2356,15 @@
             <img src="../img/leonidas.jpg" alt="Leonidas tribute thread" style="width: 100%; height: 220px; object-fit: cover; display: block;">
             <div style="padding: 20px 24px;">
               <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 6px; font-weight: 600;">@dominik_btc</p>
-              <p style="font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.5; margin-bottom: 12px;">"Every single day I think about that mass Leonidas followed 3,000+ people. Including me. That mass follow changed my life."</p>
+              <p style="font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.5; margin-bottom: 12px;">"Leonidas - The Runes Father."</p>
               <a href="https://x.com/dominik_btc/status/1946646918572175529" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 600; color: var(--orange); display: inline-flex; align-items: center; gap: 4px;">
                 View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
             </div>
           </div>
           <div class="video-caption">
-            <p class="video-caption-text">Leonidas tribute thread</p>
-            <p class="video-stats">1,234 likes &middot; 394 RTs &middot; Biggest personal post</p>
+            <p class="video-caption-text">Leonidas - The Runes Father.</p>
+            <p class="video-stats">1,234 likes &middot; 394 RTs &middot; Tribute thread</p>
           </div>
         </div>
 
@@ -2248,10 +2399,11 @@
             </div>
           </div>
           <div class="video-caption">
-            <p class="video-caption-text">"What you actually do at crypto conf"</p>
+            <p class="video-caption-text">Proof of Business Development</p>
             <p class="video-stats">140 likes &middot; Culture content</p>
           </div>
         </div>
+
 
         </div>
         <div class="carousel-nav">
@@ -2268,173 +2420,30 @@
       <div class="testimonials-grid" style="margin-top: 64px;">
         <div class="testimonial-card fade-up">
           <div class="testimonial-quote-icon">&ldquo;</div>
+          <p class="testimonial-text">Highly creative content operator with a strong eye for ideas that stand out and fit the brand.</p>
+          <p class="testimonial-author">Ken Liao</p>
+          <a href="https://www.linkedin.com/in/vibemarketer/details/recommendations/" target="_blank" rel="noopener" class="testimonial-handle">View on LinkedIn</a>
+          <div><span class="testimonial-affiliation">CEO, Xverse</span></div>
+        </div>
+        <div class="testimonial-card fade-up fade-up-delay-1">
+          <div class="testimonial-quote-icon">&ldquo;</div>
           <p class="testimonial-text">Xverse stays goated. big love to @dominik_btc and his team</p>
           <p class="testimonial-author">Franc1s</p>
           <a href="https://x.com/FullTiltFrancis/status/1819427677008486753" target="_blank" rel="noopener" class="testimonial-handle">@FullTiltFrancis</a>
           <div><span class="testimonial-affiliation">Binance</span></div>
         </div>
-        <div class="testimonial-card fade-up fade-up-delay-1">
-          <div class="testimonial-quote-icon">&ldquo;</div>
-          <p class="testimonial-text">Been familiar with Dc since the Shitcoin days. Dude is nothing but positive vibes and I speak for everyone when we appreciate his presence</p>
-          <p class="testimonial-author">DRZA</p>
-          <a href="https://x.com/DRZAONECTO/status/2035153868544152053" target="_blank" rel="noopener" class="testimonial-handle">@DRZAONECTO</a>
-        </div>
         <div class="testimonial-card fade-up fade-up-delay-2">
-          <div class="testimonial-quote-icon">&ldquo;</div>
-          <p class="testimonial-text">DAT will always be a legend in my book. Spends so much time helping others succeed. Up only</p>
-          <p class="testimonial-author">cpt dank</p>
-          <a href="https://x.com/dankerwim/status/2033252817792540935" target="_blank" rel="noopener" class="testimonial-handle">@dankerwim</a>
-        </div>
-        <div class="testimonial-card fade-up fade-up-delay-3">
           <div class="testimonial-quote-icon">&ldquo;</div>
           <p class="testimonial-text">intern is a bonafide rockstar</p>
           <p class="testimonial-author">Janlo VDH</p>
           <a href="https://x.com/thenewgold_btc/status/1983198291539186016" target="_blank" rel="noopener" class="testimonial-handle">@thenewgold_btc</a>
+          <div><span class="testimonial-affiliation">Head of Growth, Xverse</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================
-       SECTION 3: CAMPAIGNS
-       ======================================== -->
-  <section class="viral-content" id="campaigns" style="background: var(--gray-50);">
-    <div class="container">
-      <span class="section-label fade-up">Campaigns</span>
-      <h2 class="section-title fade-up">Campaigns I led</h2>
-
-      <div class="carousel-wrapper">
-        <div class="carousel-track" data-carousel="campaigns">
-
-        <!-- 1. Xclusive -->
-        <div class="campaign-card fade-up">
-          <span class="campaign-card-badge">Partnership Campaign</span>
-          <h3 class="campaign-card-title">Xclusive</h3>
-          <p class="campaign-card-desc">Managed partner giveaways across 10+ projects, driving 50K+ registrations to the Xverse ecosystem.</p>
-          <div class="campaign-card-stats">
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">50K+</span>
-              <span class="campaign-card-stat-label">Registrations</span>
-            </div>
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">10+</span>
-              <span class="campaign-card-stat-label">Partners</span>
-            </div>
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">19.6K</span>
-              <span class="campaign-card-stat-label">Top post impressions</span>
-            </div>
-          </div>
-          <a href="https://x.com/xverse/status/1993207492604788874" target="_blank" rel="noopener" class="campaign-card-link">
-            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-
-        <!-- 2. What The Fork -->
-        <div class="campaign-card fade-up">
-          <span class="campaign-card-badge">Creative Campaign</span>
-          <h3 class="campaign-card-title">What The Fork</h3>
-          <p class="campaign-card-desc">Bitcoin soft-fork advocacy campaign with a dedicated website, merch line, and $15K Runes giveaway at BTC Vegas.</p>
-          <div class="campaign-card-stats">
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">61.8K</span>
-              <span class="campaign-card-stat-label">Launch impressions</span>
-            </div>
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">4,246</span>
-              <span class="campaign-card-stat-label">Wallets signed</span>
-            </div>
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">35.67</span>
-              <span class="campaign-card-stat-label">BTC supported</span>
-            </div>
-          </div>
-          <a href="https://x.com/xverse/status/1910669171509297513" target="_blank" rel="noopener" class="campaign-card-link">
-            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-
-        <!-- 3. Ordinals Asia -->
-        <div class="campaign-card fade-up">
-          <span class="campaign-card-badge">Event</span>
-          <h3 class="campaign-card-title">Ordinals Asia 2024</h3>
-          <p class="campaign-card-desc">Co-hosted the world's largest Ordinals conference at Soho House HK. Moderated main stage panel with Casey Rodarmor and Udi Wertheimer.</p>
-          <div class="campaign-card-stats">
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">~1,000</span>
-              <span class="campaign-card-stat-label">Attendees</span>
-            </div>
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">Co-host</span>
-              <span class="campaign-card-stat-label">Xverse role</span>
-            </div>
-            <div class="campaign-card-stat">
-              <span class="campaign-card-stat-num">Panel</span>
-              <span class="campaign-card-stat-label">Moderator</span>
-            </div>
-          </div>
-          <a href="https://x.com/btc_summit/status/1789143575307165975" target="_blank" rel="noopener" class="campaign-card-link">
-            View on X <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-          </a>
-        </div>
-
-        </div>
-        <div class="carousel-nav">
-          <button class="carousel-btn" onclick="scrollCarousel('campaigns', -1)" aria-label="Previous">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <button class="carousel-btn" onclick="scrollCarousel('campaigns', 1)" aria-label="Next">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================
-       SECTION 4: PARTNERSHIPS & KOL MANAGEMENT (last)
-       ======================================== -->
-  <section class="community-proof" id="partnerships" style="padding: var(--section-padding) 0;">
-    <div class="container">
-      <span class="section-label fade-up">Partnerships & KOL</span>
-      <h2 class="section-title fade-up">Ecosystem partnerships</h2>
-      <p class="section-subtitle fade-up">Managed partner relationships across wallets, L2s, infrastructure, media, and community projects. Click any name to see the collaboration.</p>
-
-      <div class="brand-wall fade-up">
-        <a href="https://x.com/xverse/status/2036099600269062511" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/google.svg" alt="Google"></a>
-        <a href="https://x.com/xverse/status/1927394394916753896" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/starknet.svg" alt="Starknet"></a>
-        <a href="https://x.com/xverse/status/1745652765966438869" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/ledger.svg" alt="Ledger"></a>
-        <a href="https://x.com/xverse/status/1981358452929942002" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/usdc.svg" alt="USDC"></a>
-        <a href="https://x.com/xverse/status/1990439194993611241" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/wbtc.svg" alt="WBTC"></a>
-        <a href="https://x.com/coingecko/status/1943294285518115207" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/coingecko.svg" alt="CoinGecko"></a>
-        <a href="https://x.com/xverse/status/2033891961606967309" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/spark.svg" alt="Spark"></a>
-        <a href="https://x.com/xverse/status/1906695033887330575" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/bob.svg" alt="BOB"></a>
-        <a href="https://x.com/xverse/status/1960009309192130865" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/lombard.svg" alt="Lombard" style="background:#1a1a2e;border-radius:4px;padding:2px;"></a>
-        <a href="https://x.com/xverse/status/1887478307400393098" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/keystone.png" alt="Keystone"></a>
-        <a href="https://x.com/xverse/status/1935326199808704921" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/moonpay.svg" alt="MoonPay"></a>
-        <a href="https://x.com/xverse/status/1933162474280567050" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/stacks.svg" alt="Stacks"></a>
-      </div>
-
-      <div class="partnership-stats fade-up">
-        <div class="partnership-stat">
-          <span class="partnership-stat-number">50+</span>
-          <span class="partnership-stat-label">Partnerships managed</span>
-        </div>
-        <div class="partnership-stat">
-          <span class="partnership-stat-number">100+</span>
-          <span class="partnership-stat-label">KOLs managed globally</span>
-        </div>
-        <div class="partnership-stat">
-          <span class="partnership-stat-number">50K+</span>
-          <span class="partnership-stat-label">Campaign registrations</span>
-        </div>
-        <div class="partnership-stat">
-          <span class="partnership-stat-number">6M+</span>
-          <span class="partnership-stat-label">Impressions / year</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div><!-- end reorderable -->
 
   <!-- Speaking one-liner in footer area -->
   <div style="text-align: center; padding: 24px 0; background: var(--white);">
@@ -2512,8 +2521,10 @@
     gsap.registerPlugin(ScrollTrigger);
 
     // Fade + slide up every section as it scrolls into view
+    // Replace the old IntersectionObserver approach with GSAP
     const fadeEls = document.querySelectorAll('.fade-up');
     fadeEls.forEach(el => {
+      // Remove the old CSS-based initial state so GSAP controls it
       el.style.opacity = '0';
       el.style.transform = 'translateY(40px)';
       el.style.transition = 'none';
@@ -2547,6 +2558,7 @@
       const cards = document.querySelectorAll(selector);
       if (cards.length > 0) {
         cards.forEach(card => {
+          // Reset any inline GSAP transforms from fade-up
           card.style.opacity = '0';
           card.style.transform = 'translateY(30px)';
           card.style.transition = 'none';
@@ -2588,6 +2600,7 @@
     (function initCounters() {
       const CountUp = countUp.CountUp;
 
+      // Define counter targets: map stat-number elements to their numeric values
       const statCards = document.querySelectorAll('.stat-card');
 
       statCards.forEach(card => {
@@ -2596,16 +2609,24 @@
 
         const text = numEl.textContent.trim();
 
+        // Parse different stat formats
+        // "50K→127K" — animate as "127" with prefix "50K→" and suffix "K"
+        // "2x" — animate as "2" with suffix "x"
+        // "360+" — animate as "360" with suffix "+"
+        // "380K+" — animate as "380" with suffix "K+"
+
         let endVal, prefix = '', suffix = '', decimals = 0;
 
-        if (text.includes('\u2192')) {
-          const parts = text.split('\u2192');
-          prefix = parts[0] + '\u2192';
+        if (text.includes('→')) {
+          // e.g. "50K→127K"
+          const parts = text.split('→');
+          prefix = parts[0] + '→';
           const rightPart = parts[1];
           endVal = parseFloat(rightPart.replace(/[^0-9.]/g, ''));
           suffix = rightPart.replace(/[0-9.]/g, '');
         } else {
           endVal = parseFloat(text.replace(/[^0-9.]/g, ''));
+          // Determine suffix by removing the number
           const numStr = text.match(/[0-9.]+/);
           if (numStr) {
             const idx = text.indexOf(numStr[0]);
@@ -2616,6 +2637,7 @@
 
         if (isNaN(endVal)) return;
 
+        // Create a span for the animated number part
         const countSpan = document.createElement('span');
         countSpan.className = 'count-target';
         numEl.textContent = '';
@@ -2659,6 +2681,7 @@
       const dot = document.getElementById('cursorDot');
       const ring = document.getElementById('cursorRing');
 
+      // Only enable on non-touch, wide screens
       if (!dot || !ring) return;
       if (window.innerWidth < 769 || !window.matchMedia('(pointer: fine)').matches) return;
 
@@ -2672,6 +2695,7 @@
         dot.style.top = mouseY + 'px';
       });
 
+      // Smooth follow for ring
       function animateRing() {
         ringX += (mouseX - ringX) * 0.15;
         ringY += (mouseY - ringY) * 0.15;
@@ -2681,6 +2705,7 @@
       }
       animateRing();
 
+      // Expand on hover over interactive elements
       const hoverTargets = document.querySelectorAll('a, button, .skill-pill, .event-pill, .stat-card, .video-card, .testimonial-card, .quote-card');
       hoverTargets.forEach(el => {
         el.addEventListener('mouseenter', () => {
@@ -2693,6 +2718,7 @@
         });
       });
 
+      // Hide cursor when leaving window
       document.addEventListener('mouseleave', () => {
         dot.style.opacity = '0';
         ring.style.opacity = '0';
@@ -2722,33 +2748,11 @@
     function scrollCarousel(name, direction) {
       const track = document.querySelector(`[data-carousel="${name}"]`);
       if (!track) return;
-      const cardWidth = track.querySelector('.video-card, .quote-card, .campaign-card')?.offsetWidth || 340;
+      const cardWidth = track.querySelector('.video-card, .quote-card')?.offsetWidth || 340;
       track.scrollBy({ left: direction * (cardWidth + 24), behavior: 'smooth' });
     }
 
-    // Auto-scroll every 5 seconds, pause on hover
-    document.querySelectorAll('.carousel-track').forEach(track => {
-      let interval;
-
-      const startAutoScroll = () => {
-        interval = setInterval(() => {
-          const maxScroll = track.scrollWidth - track.clientWidth;
-          if (track.scrollLeft >= maxScroll - 10) {
-            track.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            const cardWidth = track.querySelector('.video-card, .quote-card, .campaign-card')?.offsetWidth || 340;
-            track.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
-          }
-        }, 5000);
-      };
-
-      startAutoScroll();
-
-      track.addEventListener('mouseenter', () => clearInterval(interval));
-      track.addEventListener('mouseleave', startAutoScroll);
-      track.addEventListener('touchstart', () => clearInterval(interval), { passive: true });
-      track.addEventListener('touchend', () => { setTimeout(startAutoScroll, 3000); });
-    });
+    // Auto-scroll disabled — best content shows first
 
     // Video hover-to-play
     document.querySelectorAll('.carousel-track .video-card').forEach(card => {
@@ -2825,10 +2829,99 @@
       card.style.cursor = 'pointer';
       card.addEventListener('click', (e) => {
         if (e.target.closest('video') && e.target.tagName !== 'VIDEO') return;
-        if (e.target.tagName === 'VIDEO') return;
+        if (e.target.tagName === 'VIDEO') return; // let inline video controls work
         openLightbox(card);
       });
     });
+
+    // =============================================
+    // URL ROUTING: ?role=content reorders sections
+    // Default order: Partnerships(1) → Campaigns(2) → Brand Content(3) → Intern(4)
+    // Content order: Brand Content(1) → Intern(2) → Campaigns(3) → Partnerships(4)
+    // =============================================
+    (function initRouting() {
+      const params = new URLSearchParams(window.location.search);
+      const role = params.get('role');
+      if (role === 'content') {
+        const container = document.getElementById('reorderable');
+        const sections = Array.from(container.children).filter(el => el.tagName === 'SECTION');
+        sections.sort((a, b) => {
+          const orderA = parseInt(a.dataset.contentOrder) || 99;
+          const orderB = parseInt(b.dataset.contentOrder) || 99;
+          return orderA - orderB;
+        });
+        sections.forEach(section => container.appendChild(section));
+      }
+    })();
+
+    // =============================================
+    // COUNT-UP ANIMATION FOR PARTNERSHIP STATS
+    // =============================================
+    (function initPartnershipCountUp() {
+      const statEls = document.querySelectorAll('.partnership-stat-number');
+      if (!statEls.length) return;
+
+      function parseStatText(text) {
+        text = text.trim();
+        let endVal = 0;
+        let suffix = '+';
+        let multiplier = 1;
+
+        if (text.includes('M')) {
+          const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+          endVal = num;
+          suffix = 'M+';
+        } else if (text.includes('K')) {
+          const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+          endVal = num;
+          suffix = 'K+';
+        } else {
+          endVal = parseFloat(text.replace(/[^0-9.]/g, ''));
+          suffix = '+';
+        }
+
+        return { endVal, suffix };
+      }
+
+      function animateValue(el, endVal, suffix, duration) {
+        const startTime = performance.now();
+        const startVal = 0;
+
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(startVal + (endVal - startVal) * eased);
+          el.textContent = current + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = endVal + suffix;
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const { endVal, suffix } = parseStatText(el.dataset.countTarget);
+            el.textContent = '0' + suffix;
+            animateValue(el, endVal, suffix, 2000);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      statEls.forEach(el => {
+        el.dataset.countTarget = el.textContent.trim();
+        observer.observe(el);
+      });
+    })();
   </script>
 
 
