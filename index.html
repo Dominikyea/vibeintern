@@ -351,8 +351,8 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 1fr;
+      gap: 40px;
       align-items: start;
     }
 
@@ -1569,104 +1569,6 @@
     }
 
     /* ========================================
-       V3: MARQUEE / TICKER STRIP
-       ======================================== */
-    .marquee-strip {
-      overflow: hidden;
-      padding: 24px 0;
-      background: var(--gray-100);
-      border-top: 1px solid var(--gray-300);
-      border-bottom: 1px solid var(--gray-300);
-      position: relative;
-    }
-
-    .marquee-strip--dark {
-      background: var(--gray-900);
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      animation: marquee-scroll 40s linear infinite;
-    }
-
-    .marquee-strip:hover .marquee-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes marquee-scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .marquee-item {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 24px;
-      margin: 0 8px;
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-      white-space: nowrap;
-      border: 1px solid var(--gray-300);
-      background: var(--white);
-      color: var(--gray-700);
-      filter: grayscale(1);
-      opacity: 0.6;
-      transition: all 0.3s ease;
-    }
-
-    .marquee-item:hover {
-      filter: grayscale(0);
-      opacity: 1;
-      border-color: var(--orange);
-      color: var(--orange);
-      transform: scale(1.05);
-    }
-
-    .marquee-item--conf {
-      background: transparent;
-      border: 1px dashed var(--gray-300);
-      color: var(--gray-500);
-      font-weight: 500;
-    }
-
-    .marquee-item--conf:hover {
-      border-style: solid;
-      border-color: var(--orange);
-      color: var(--orange);
-      background: var(--orange-light);
-    }
-
-    .marquee-strip--dark .marquee-item {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .marquee-strip--dark .marquee-item:hover {
-      background: rgba(248, 137, 58, 0.1);
-      border-color: var(--orange);
-      color: var(--orange);
-    }
-
-    .marquee-strip--dark .marquee-item--conf {
-      background: transparent;
-      border: 1px dashed rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-    .marquee-strip--dark .marquee-item--conf:hover {
-      border-style: solid;
-      border-color: var(--orange);
-      color: var(--orange);
-      background: rgba(248, 137, 58, 0.1);
-    }
-
-    /* ========================================
        V3: CUSTOM CURSOR (Desktop Only)
        ======================================== */
     .cursor-dot,
@@ -1785,7 +1687,7 @@
     }
 
     .partnership-stat-number {
-      font-size: 1.5rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 800;
       color: var(--dark);
       letter-spacing: -0.02em;
@@ -1795,6 +1697,18 @@
       font-size: 0.8rem;
       color: var(--gray-500);
       margin-top: 2px;
+    }
+
+    .stat-number, .partnership-stat-number {
+      text-shadow: 0 0 20px rgba(248, 137, 58, 0.3), 0 0 40px rgba(248, 137, 58, 0.1);
+    }
+
+    .brand-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-left: 6px;
+      letter-spacing: 0.02em;
     }
 
     /* Campaign / Brand Content cards in carousel */
@@ -1954,7 +1868,7 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-badge fade-up">Currently building at Xverse</div>
+          <div class="hero-badge fade-up">Cooking</div>
           <h1 class="hero-name fade-up fade-up-delay-1">Dominic Tsang</h1>
           <p class="hero-title fade-up fade-up-delay-2">Growth & Ecosystem Manager</p>
           <p class="hero-tagline fade-up fade-up-delay-3">Building at Xverse. I help bring Bitcoin to more people through content, community, and creative GTM.</p>
@@ -1993,39 +1907,6 @@
     </div>
   </div>
 
-  <!-- V3: MARQUEE TICKER STRIP -->
-  <div class="marquee-strip" aria-hidden="true">
-    <div class="marquee-track">
-      <span class="marquee-item">6M+ impressions/year</span>
-      <span class="marquee-item">127K+ followers grown</span>
-      <span class="marquee-item">7.9% peak engagement</span>
-      <span class="marquee-item">100+ KOLs managed</span>
-      <span class="marquee-item">20+ partner campaigns</span>
-      <span class="marquee-item marquee-item--conf">Ordinals Asia</span>
-      <span class="marquee-item marquee-item--conf">Consensus HK</span>
-      <span class="marquee-item marquee-item--conf">Bitcoin Summit</span>
-      <span class="marquee-item marquee-item--conf">BTC Korea</span>
-      <span class="marquee-item marquee-item--conf">Taipei Blockchain Week</span>
-      <span class="marquee-item">324K peak views</span>
-      <span class="marquee-item">5+ conferences spoken</span>
-      <span class="marquee-item">Bilingual EN/ZH</span>
-      <!-- Duplicate set for seamless loop -->
-      <span class="marquee-item">6M+ impressions/year</span>
-      <span class="marquee-item">127K+ followers grown</span>
-      <span class="marquee-item">7.9% peak engagement</span>
-      <span class="marquee-item">100+ KOLs managed</span>
-      <span class="marquee-item">20+ partner campaigns</span>
-      <span class="marquee-item marquee-item--conf">Ordinals Asia</span>
-      <span class="marquee-item marquee-item--conf">Consensus HK</span>
-      <span class="marquee-item marquee-item--conf">Bitcoin Summit</span>
-      <span class="marquee-item marquee-item--conf">BTC Korea</span>
-      <span class="marquee-item marquee-item--conf">Taipei Blockchain Week</span>
-      <span class="marquee-item">324K peak views</span>
-      <span class="marquee-item">5+ conferences spoken</span>
-      <span class="marquee-item">Bilingual EN/ZH</span>
-    </div>
-  </div>
-
   <!-- ========================================
        ABOUT
        ======================================== -->
@@ -2036,18 +1917,18 @@
           <span class="section-label">About</span>
           <h2 class="section-title">A bit about me</h2>
           <p class="about-text">
-            Building at Xverse. I help bring Bitcoin to more people through content, community, and creative GTM. Previously in biz dev, NFT projects, and digital content. Always experimenting with AI and video to make things move faster.
+            8+ years in social media, content marketing, KOL management, partnerships, and community growth. Crypto, web3, video production, biz dev. I make content that goes viral, close deals with brands you've heard of, and use AI to scale my workflow.
           </p>
         </div>
         <div class="fade-up fade-up-delay-2">
           <p class="about-skills-title">What I do</p>
           <div class="skills-grid">
-            <span class="skill-pill">Creative Strategy</span>
-            <span class="skill-pill">GTM Strategy</span>
+            <span class="skill-pill">Social Media Marketing</span>
+            <span class="skill-pill">KOL Management</span>
+            <span class="skill-pill">Content Strategy</span>
+            <span class="skill-pill">Strategic Partnerships</span>
             <span class="skill-pill">AI Automation</span>
-            <span class="skill-pill">AI Video Generation</span>
-            <span class="skill-pill">Video Production</span>
-            <span class="skill-pill">Community Building</span>
+            <span class="skill-pill">Community Growth</span>
           </div>
         </div>
       </div>
@@ -2071,16 +1952,16 @@
       <div class="brand-wall fade-up">
         <a href="https://x.com/xverse/status/2036099600269062511" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/google.svg" alt="Google"></a>
         <a href="https://x.com/xverse/status/1927394394916753896" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/starknet.svg" alt="Starknet"></a>
-        <a href="https://x.com/xverse/status/1745652765966438869" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/ledger.svg" alt="Ledger"></a>
-        <a href="https://x.com/xverse/status/1981358452929942002" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/usdc.svg" alt="USDC"></a>
-        <a href="https://x.com/xverse/status/1990439194993611241" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/wbtc.svg" alt="WBTC"></a>
+        <a href="https://x.com/xverse/status/1745652765966438869" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/ledger.svg" alt="Ledger"><span class="brand-label">Ledger</span></a>
+        <a href="https://x.com/xverse/status/1981358452929942002" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/usdc.svg" alt="USDC"><span class="brand-label">USDC</span></a>
+        <a href="https://x.com/xverse/status/1990439194993611241" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/wbtc.svg" alt="WBTC"><span class="brand-label">WBTC</span></a>
         <a href="https://x.com/coingecko/status/1943294285518115207" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/coingecko.svg" alt="CoinGecko"></a>
         <a href="https://x.com/xverse/status/2033891961606967309" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/spark.svg" alt="Spark"></a>
-        <a href="https://x.com/xverse/status/1906695033887330575" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/bob.svg" alt="BOB"></a>
+        <a href="https://x.com/xverse/status/1906695033887330575" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/bob.svg" alt="BOB"><span class="brand-label">BOB</span></a>
         <a href="https://x.com/xverse/status/1960009309192130865" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/lombard.svg" alt="Lombard" style="background:#1a1a2e;border-radius:4px;padding:2px;"></a>
-        <a href="https://x.com/xverse/status/1887478307400393098" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/keystone.png" alt="Keystone"></a>
+        <a href="https://x.com/xverse/status/1887478307400393098" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/keystone.png" alt="Keystone"><span class="brand-label">Keystone</span></a>
         <a href="https://x.com/xverse/status/1935326199808704921" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/moonpay.svg" alt="MoonPay"></a>
-        <a href="https://x.com/xverse/status/1933162474280567050" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/stacks.svg" alt="Stacks"></a>
+        <a href="https://x.com/xverse/status/1933162474280567050" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/stacks.svg" alt="Stacks"><span class="brand-label">Stacks</span></a>
       </div>
 
       <div class="partnership-stats fade-up">
@@ -2097,7 +1978,7 @@
           <span class="partnership-stat-label">Campaign registrations</span>
         </div>
         <div class="partnership-stat">
-          <span class="partnership-stat-number">6M+</span>
+          <span class="partnership-stat-number">30M+</span>
           <span class="partnership-stat-label">Impressions / year</span>
         </div>
       </div>
@@ -2206,7 +2087,7 @@
   <section class="viral-content" id="brand-content" data-section-order="3" data-content-order="1" style="padding: var(--section-padding) 0;">
     <div class="container">
       <span class="section-label fade-up">Brand Content</span>
-      <h2 class="section-title fade-up">Content I wrote <span style="font-size: 0.45em; font-weight: 500; color: var(--gray-500); margin-left: 8px;">50K &rarr; 127K followers &middot; 6M+ impressions/year &middot; 7.9% peak engagement</span></h2>
+      <h2 class="section-title fade-up">Content I wrote <span style="font-size: 0.45em; font-weight: 500; color: var(--gray-500); margin-left: 8px;">50K &rarr; 127K followers &middot; 30M+ impressions/year &middot; 7.9% peak engagement</span></h2>
 
       <div class="carousel-wrapper">
         <div class="carousel-track" data-carousel="brand-content">
@@ -2867,6 +2748,75 @@
         });
         sections.forEach(section => container.appendChild(section));
       }
+    })();
+
+    // =============================================
+    // COUNT-UP ANIMATION FOR PARTNERSHIP STATS
+    // =============================================
+    (function initPartnershipCountUp() {
+      const statEls = document.querySelectorAll('.partnership-stat-number');
+      if (!statEls.length) return;
+
+      function parseStatText(text) {
+        text = text.trim();
+        let endVal = 0;
+        let suffix = '+';
+        let multiplier = 1;
+
+        if (text.includes('M')) {
+          const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+          endVal = num;
+          suffix = 'M+';
+        } else if (text.includes('K')) {
+          const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+          endVal = num;
+          suffix = 'K+';
+        } else {
+          endVal = parseFloat(text.replace(/[^0-9.]/g, ''));
+          suffix = '+';
+        }
+
+        return { endVal, suffix };
+      }
+
+      function animateValue(el, endVal, suffix, duration) {
+        const startTime = performance.now();
+        const startVal = 0;
+
+        function update(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease out cubic
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(startVal + (endVal - startVal) * eased);
+          el.textContent = current + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            el.textContent = endVal + suffix;
+          }
+        }
+
+        requestAnimationFrame(update);
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const { endVal, suffix } = parseStatText(el.dataset.countTarget);
+            el.textContent = '0' + suffix;
+            animateValue(el, endVal, suffix, 2000);
+            observer.unobserve(el);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      statEls.forEach(el => {
+        el.dataset.countTarget = el.textContent.trim();
+        observer.observe(el);
+      });
     })();
   </script>
 
