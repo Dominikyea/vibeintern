@@ -2688,29 +2688,7 @@
       track.scrollBy({ left: direction * (cardWidth + 24), behavior: 'smooth' });
     }
 
-    // Auto-scroll every 5 seconds, pause on hover
-    document.querySelectorAll('.carousel-track').forEach(track => {
-      let interval;
-
-      const startAutoScroll = () => {
-        interval = setInterval(() => {
-          const maxScroll = track.scrollWidth - track.clientWidth;
-          if (track.scrollLeft >= maxScroll - 10) {
-            track.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            const cardWidth = track.querySelector('.video-card, .quote-card')?.offsetWidth || 340;
-            track.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
-          }
-        }, 5000);
-      };
-
-      startAutoScroll();
-
-      track.addEventListener('mouseenter', () => clearInterval(interval));
-      track.addEventListener('mouseleave', startAutoScroll);
-      track.addEventListener('touchstart', () => clearInterval(interval), { passive: true });
-      track.addEventListener('touchend', () => { setTimeout(startAutoScroll, 3000); });
-    });
+    // Auto-scroll disabled — best content shows first
 
     // Video hover-to-play
     document.querySelectorAll('.carousel-track .video-card').forEach(card => {
