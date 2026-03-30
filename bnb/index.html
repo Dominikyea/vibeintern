@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dominic Tsang - Growth Manager | Binance Academy</title>
+  <meta name="description" content="Dominic Tsang - Growth & Ecosystem Manager. 8+ years driving community-driven growth, content strategy, and cross-functional GTM in crypto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================
+       RESET & BASE
+       ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0B0E11;
+      color: #EAECEF;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ========================================
+       CSS VARIABLES
+       ======================================== */
+    :root {
+      --binance-yellow: #F0B90B;
+      --binance-yellow-hover: #F8D33A;
+      --binance-yellow-light: rgba(240, 185, 11, 0.12);
+      --binance-yellow-glow: rgba(240, 185, 11, 0.25);
+      --dark-bg: #0B0E11;
+      --dark-card: #1E2329;
+      --dark-border: #2B3139;
+      --text-primary: #EAECEF;
+      --text-secondary: #848E9C;
+      --text-muted: #5E6673;
+      --max-width: 1140px;
+      --section-padding: 120px;
+      --border-radius: 16px;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(11, 14, 17, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(43, 49, 57, 0.6);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--binance-yellow);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--binance-yellow);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* ========================================
+       CONTAINER
+       ======================================== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--binance-yellow);
+      margin-bottom: 16px;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--binance-yellow);
+      border-radius: 2px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+    .hero {
+      padding-top: 160px;
+      padding-bottom: var(--section-padding);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(240, 185, 11, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--binance-yellow-light);
+      color: var(--binance-yellow);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--binance-yellow);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero-name {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+      font-weight: 600;
+      color: var(--binance-yellow);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-tagline {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--dark-card);
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+
+    .social-link:hover {
+      background: var(--binance-yellow);
+      color: var(--dark-bg);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--binance-yellow-glow);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hero-image-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .hero-image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--binance-yellow), #E8A600);
+      opacity: 0.2;
+      z-index: -1;
+    }
+
+    .hero-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--dark-card);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ========================================
+       ABOUT
+       ======================================== */
+    .about {
+      padding: var(--section-padding) 0;
+      background: var(--dark-card);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .about-text {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .about-skills-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      border-radius: 100px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .skill-pill:nth-child(1) { background: var(--binance-yellow-light); color: var(--binance-yellow); }
+    .skill-pill:nth-child(2) { background: rgba(3, 166, 109, 0.12); color: #03A66D; }
+    .skill-pill:nth-child(3) { background: rgba(246, 70, 93, 0.12); color: #F6465D; }
+    .skill-pill:nth-child(4) { background: rgba(71, 77, 87, 0.3); color: #B7BDC6; }
+    .skill-pill:nth-child(5) { background: rgba(240, 185, 11, 0.08); color: #D4A20A; }
+    .skill-pill:nth-child(6) { background: rgba(3, 166, 109, 0.08); color: #03A66D; }
+
+    .skill-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ========================================
+       EXPERIENCE
+       ======================================== */
+    .experience {
+      padding: var(--section-padding) 0;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 48px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--binance-yellow), #E8A600, var(--text-muted));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 72px;
+      padding-bottom: 56px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 14px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--dark-bg);
+      border: 3px solid var(--binance-yellow);
+      box-shadow: 0 0 0 4px var(--binance-yellow-light);
+      z-index: 1;
+    }
+
+    .timeline-item:nth-child(2) .timeline-dot { border-color: #E8A600; box-shadow: 0 0 0 4px rgba(232, 166, 0, 0.12); }
+    .timeline-item:nth-child(3) .timeline-dot { border-color: #03A66D; box-shadow: 0 0 0 4px rgba(3, 166, 109, 0.12); }
+    .timeline-item:nth-child(4) .timeline-dot { border-color: var(--text-muted); box-shadow: 0 0 0 4px rgba(94, 102, 115, 0.12); }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 2px;
+    }
+
+    .timeline-company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--binance-yellow);
+      margin-bottom: 12px;
+    }
+
+    .timeline-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    /* ========================================
+       GROWTH IMPACT
+       ======================================== */
+    .impact {
+      padding: var(--section-padding) 0;
+      background: var(--dark-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .impact::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(240, 185, 11, 0.06) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--border-radius);
+      padding: 40px 28px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      background: rgba(240, 185, 11, 0.04);
+      border-color: rgba(240, 185, 11, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--binance-yellow), #F8D33A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    /* ========================================
+       WHY ME (GROWTH FIT)
+       ======================================== */
+    .fit {
+      padding: var(--section-padding) 0;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .fit-card {
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--border-radius);
+      padding: 36px 28px;
+      transition: all 0.3s ease;
+    }
+
+    .fit-card:hover {
+      border-color: rgba(240, 185, 11, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .fit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--binance-yellow-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--binance-yellow);
+    }
+
+    .fit-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .fit-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .fit-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       VIDEO WORK
+       ======================================== */
+    .videos {
+      padding: var(--section-padding) 0;
+      background: var(--dark-card);
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+
+    .video-card {
+      background: var(--dark-bg);
+      border: 1px solid var(--dark-border);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .video-card:hover {
+      border-color: var(--binance-yellow);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .video-embed {
+      width: 100%;
+      min-height: 350px;
+    }
+
+    .video-caption {
+      padding: 20px 24px;
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .video-caption-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .video-stats {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* ========================================
+       SPEAKING
+       ======================================== */
+    .speaking {
+      padding: var(--section-padding) 0;
+    }
+
+    .speaking-desc {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 600px;
+    }
+
+    .events-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .event-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 100px;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+
+    .event-pill:hover {
+      border-color: var(--binance-yellow);
+      box-shadow: 0 4px 16px rgba(240, 185, 11, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .event-pill::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--binance-yellow);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ========================================
+       FOOTER / CONTACT
+       ======================================== */
+    .footer {
+      padding: 80px 0 48px;
+      background: var(--dark-card);
+      border-top: 1px solid var(--dark-border);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .footer-title span {
+      background: linear-gradient(135deg, var(--binance-yellow), #F8D33A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .footer-link--primary {
+      background: var(--binance-yellow);
+      color: var(--dark-bg);
+    }
+
+    .footer-link--primary:hover {
+      background: var(--binance-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px var(--binance-yellow-glow);
+    }
+
+    .footer-link--ghost {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--dark-border);
+    }
+
+    .footer-link--ghost:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    .footer-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--dark-border);
+      margin-bottom: 28px;
+    }
+
+    .footer-bottom {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       ANIMATIONS
+       ======================================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1024px) {
+      :root {
+        --section-padding: 80px;
+      }
+
+      .hero-inner {
+        gap: 48px;
+      }
+
+      .hero-image {
+        width: 240px;
+        height: 240px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .videos-grid,
+      .fit-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 64px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .nav-inner {
+        padding: 0 20px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(11, 14, 17, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 24px 20px;
+        gap: 0;
+        border-bottom: 1px solid var(--dark-border);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 1rem;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .hero-tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-socials {
+        justify-content: center;
+      }
+
+      .hero-image {
+        width: 200px;
+        height: 200px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .stat-card {
+        padding: 28px 16px;
+      }
+
+      .timeline::before {
+        left: 15px;
+      }
+
+      .timeline-item {
+        padding-left: 52px;
+      }
+
+      .timeline-dot {
+        left: 8px;
+        width: 16px;
+        height: 16px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .footer-link {
+        justify-content: center;
+      }
+
+      .events-list {
+        gap: 8px;
+      }
+
+      .event-pill {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-name {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================
+       NAVIGATION
+       ======================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">dominic<span>.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" onclick="closeNav()">About</a></li>
+        <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+        <li><a href="#impact" onclick="closeNav()">Impact</a></li>
+        <li><a href="#fit" onclick="closeNav()">Why Me</a></li>
+        <li><a href="#videos" onclick="closeNav()">Videos</a></li>
+        <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       HERO
+       ======================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge fade-up">Currently building at Xverse</div>
+          <h1 class="hero-name fade-up fade-up-delay-1">Dominic Tsang</h1>
+          <p class="hero-title fade-up fade-up-delay-2">Growth & Ecosystem Manager</p>
+          <p class="hero-tagline fade-up fade-up-delay-3">Helped scale Xverse wallet to 2M+ users with organic content, zero paid budget. Now I want to do the same for Academy's next hundred million learners.</p>
+          <div class="hero-socials fade-up fade-up-delay-4">
+            <a href="https://x.com/dominik_btc" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/vibemarketer" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://instagram.com/official_miyuyan2017" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.88 0 1.441 1.441 0 012.88 0z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image-wrap fade-up">
+          <img src="../headshot.jpg" alt="Dominic Tsang" class="hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       ABOUT
+       ======================================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="fade-up">
+          <span class="section-label">About</span>
+          <h2 class="section-title">Content that converts. Data that tells you why.</h2>
+          <p class="about-text">
+            At Xverse, I helped scale a Bitcoin wallet to 2M+ users. Grew X from 50K to 127K+ organically (5% avg engagement, 80M+ impressions) and created content across the full funnel: memes and short-form video for reach, explainer threads for education, product walkthroughs for activation. I think about content as a funnel, not just a feed.
+          </p>
+        </div>
+        <div class="fade-up fade-up-delay-2">
+          <p class="about-skills-title">What I bring</p>
+          <div class="skills-grid">
+            <span class="skill-pill">Growth Strategy</span>
+            <span class="skill-pill">Community Building</span>
+            <span class="skill-pill">Content-Driven Acquisition</span>
+            <span class="skill-pill">Cross-Functional Ops</span>
+            <span class="skill-pill">Bilingual EN/ZH</span>
+            <span class="skill-pill">AI Workflow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       EXPERIENCE
+       ======================================== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <span class="section-label fade-up">Experience</span>
+      <h2 class="section-title fade-up">Where I've driven growth</h2>
+
+      <div class="timeline">
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">Jan 2024 - Present</span>
+          <h3 class="timeline-role">Growth & Ecosystem Manager</h3>
+          <p class="timeline-company">Xverse</p>
+          <p class="timeline-desc">Grew X from 50K to 127K+ organically. 80M+ impressions, no paid budget. Created educational content covering Bitcoin DeFi, L2s, stablecoins, privacy, and neobanking. Led GTM for Xverse Card (3K+ signups week 1) and built partnerships with Circle, CoinGecko, MoonPay, and Google Cloud.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">2022 - 2024</span>
+          <h3 class="timeline-role">Co-Founder & Project Director</h3>
+          <p class="timeline-company">Taki Labs</p>
+          <p class="timeline-desc">Built a Web3 project from zero to 1,769 holders. Grew IG from 0 to 15.3K in a 2-person team. Produced HK's first NFT-ticketed event (360+ attendees, Yahoo News coverage).</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">2019 - 2023</span>
+          <h3 class="timeline-role">Senior BDM</h3>
+          <p class="timeline-company">One Heritage</p>
+          <p class="timeline-desc">Managed client relationships and built sales channels across financial services and UK property. Contributed to HKD 40M+ annual revenue.</p>
+        </div>
+
+        <div class="timeline-item fade-up">
+          <div class="timeline-dot"></div>
+          <span class="timeline-date">2016 - 2019</span>
+          <h3 class="timeline-role">Digital Content Producer</h3>
+          <p class="timeline-company">CapTV</p>
+          <p class="timeline-desc">Produced content for HSBC, PlayStation, SEGA, and Ubisoft. Landed Sony and HK Government partnerships. 380K+ follower channel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       GROWTH IMPACT
+       ======================================== -->
+  <section class="impact" id="impact">
+    <div class="container">
+      <span class="section-label fade-up">Impact</span>
+      <h2 class="section-title fade-up">The numbers</h2>
+
+      <div class="stats-grid">
+        <div class="stat-card fade-up">
+          <div class="stat-number">2M+</div>
+          <div class="stat-label">Xverse wallet users</div>
+        </div>
+        <div class="stat-card fade-up fade-up-delay-1">
+          <div class="stat-number">154%</div>
+          <div class="stat-label">Organic X growth (50K to 127K+)</div>
+        </div>
+        <div class="stat-card fade-up fade-up-delay-2">
+          <div class="stat-number">80M+</div>
+          <div class="stat-label">Total impressions generated</div>
+        </div>
+        <div class="stat-card fade-up fade-up-delay-3">
+          <div class="stat-number">3K+</div>
+          <div class="stat-label">Xverse Card signups (week 1)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       WHY ME
+       ======================================== -->
+  <section class="fit" id="fit">
+    <div class="container">
+      <span class="section-label fade-up">Growth Fit</span>
+      <h2 class="section-title fade-up">Why Binance Academy</h2>
+
+      <div class="fit-grid">
+        <div class="fit-card fade-up">
+          <div class="fit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="fit-title">Growth Through Content</h3>
+          <p class="fit-desc">Grew Xverse from 50K to 127K+ organically. Created content across the full funnel, from awareness to activation. Organic content consistently brought in more installs per dollar than paid campaigns.</p>
+        </div>
+
+        <div class="fit-card fade-up fade-up-delay-1">
+          <div class="fit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3 class="fit-title">Zero-to-One Builder</h3>
+          <p class="fit-desc">Co-founded Taki Labs (1,769 holders, 110 ETH volume, 7-Eleven and Deliveroo brand deals). Led GTM for Xverse Card (3K+ signups week 1) and Starknet integration.</p>
+        </div>
+
+        <div class="fit-card fade-up fade-up-delay-2">
+          <div class="fit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          </div>
+          <h3 class="fit-title">Bilingual & Global</h3>
+          <p class="fit-desc">Fluent in English, Cantonese, and Mandarin. Launched Xverse CN from zero to 10K followers for Chinese-speaking markets. Host Ord My God, a weekly Mandarin X Space (200 avg listeners). Speaker at Ordinals Asia, ETH HK, Taipei Blockchain Week, BTC Korea, Consensus HK.</p>
+        </div>
+
+        <div class="fit-card fade-up">
+          <div class="fit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3 class="fit-title">Data-Driven Decisions</h3>
+          <p class="fit-desc">A/B tested in-app banners, layouts, and copy at Xverse. Tracked conversion through Mixpanel and Google Analytics. Split content between awareness and activation based on what the data showed.</p>
+        </div>
+
+        <div class="fit-card fade-up fade-up-delay-1">
+          <div class="fit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="fit-title">Cross-Functional Operator</h3>
+          <p class="fit-desc">Work daily with product, engineering, and design at Xverse. Built co-marketing partnerships with Google Cloud, Circle, CoinGecko, and MoonPay. Google Cloud selected Xverse as 1 of 5 Web3 Startup Perks providers globally.</p>
+        </div>
+
+        <div class="fit-card fade-up fade-up-delay-2">
+          <div class="fit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </div>
+          <h3 class="fit-title">Crypto Education, Not Just Marketing</h3>
+          <p class="fit-desc">Ord My God guests include the founders of Merlin Chain and Unisat, and an OKX director. Binance Academy articles were how I learned crypto in 2021. Finance and Economics degree from Macquarie University.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       VIDEO WORK
+       ======================================== -->
+  <section class="videos" id="videos">
+    <div class="container">
+      <span class="section-label fade-up">Content</span>
+      <h2 class="section-title fade-up">Content that drives growth</h2>
+
+      <div class="videos-grid">
+        <div class="video-card fade-up">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true">
+              <a href="https://x.com/xverse/status/1971198156944834852"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"Wake up, stare at Xverse, go back to bed."</p>
+            <p class="video-stats">214K views | 3.6K likes | Best engagement</p>
+          </div>
+        </div>
+
+        <div class="video-card fade-up fade-up-delay-1">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true">
+              <a href="https://x.com/xverse/status/1983190848130167049"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"Living the dream. Still buidling."</p>
+            <p class="video-stats">137K views | Culture clip</p>
+          </div>
+        </div>
+
+        <div class="video-card fade-up fade-up-delay-2">
+          <div class="video-embed">
+            <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true">
+              <a href="https://x.com/xverse/status/1967634759825441157"></a>
+            </blockquote>
+          </div>
+          <div class="video-caption">
+            <p class="video-caption-text">"When he tells you he's a full-time trader:"</p>
+            <p class="video-stats">Top-of-funnel | Meme content</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       SPEAKING
+       ======================================== -->
+  <section class="speaking" id="speaking">
+    <div class="container">
+      <span class="section-label fade-up">Speaking</span>
+      <h2 class="section-title fade-up">On stage across Asia</h2>
+      <p class="speaking-desc fade-up">Speaker and moderator at crypto and blockchain events across the region.</p>
+
+      <div class="events-list fade-up">
+        <span class="event-pill">Ordinals Asia</span>
+        <span class="event-pill">Bitcoin Summit</span>
+        <span class="event-pill">Taipei Blockchain Week</span>
+        <span class="event-pill">BTC Korea</span>
+        <span class="event-pill">Consensus Hong Kong</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER / CONTACT
+       ======================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-inner">
+        <h2 class="footer-title fade-up">Let's <span>build</span></h2>
+        <p class="footer-subtitle fade-up">Ready to drive growth for Binance Academy.</p>
+
+        <div class="footer-links fade-up">
+          <a href="mailto:dominikyea.btc@gmail.com" class="footer-link footer-link--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email me
+          </a>
+          <a href="https://x.com/dominik_btc" target="_blank" rel="noopener" class="footer-link footer-link--ghost">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            Follow on X
+          </a>
+          <a href="https://www.linkedin.com/in/vibemarketer" target="_blank" rel="noopener" class="footer-link footer-link--ghost">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="footer-divider"></div>
+        <p class="footer-bottom">Dominic Tsang | Hong Kong</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       TWITTER EMBED
+       ======================================== -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+
+    function closeNav() {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('active');
+    }
+
+    // Intersection Observer for fade-up animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
