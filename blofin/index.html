@@ -25,8 +25,8 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #0D0D0D;
-      color: #24292F;
+      background: #FFFFFF;
+      color: #000000;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -48,20 +48,20 @@
        ======================================== */
     :root {
       --orange: #FF7A00;
-      --orange-light: #2A1A0A;
+      --orange-light: #FFF4EC;
       --orange-hover: #E56A00;
       --purple: #7B61FF;
       --purple-light: #F0EDFF;
       --blue: #037DD6;
       --blue-light: #EAF6FF;
-      --dark: #E8ECEF;
-      --gray-900: #F0F4F7;
-      --gray-700: #A0ADB8;
-      --gray-500: #708090;
-      --gray-300: #3A2F1F;
-      --gray-100: #1F1A14;
-      --gray-50: #1A0F05;
-      --white: #0D0D0D;
+      --dark: #000000;
+      --gray-900: #1B1F23;
+      --gray-700: #4A5056;
+      --gray-500: #6E7681;
+      --gray-300: #D0D7DE;
+      --gray-100: #F6F8FA;
+      --gray-50: #FAFBFC;
+      --white: #FFFFFF;
       --max-width: 1140px;
       --section-padding: 64px;
       --border-radius: 16px;
@@ -76,15 +76,15 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(13, 13, 13, 0.9);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 122, 0, 0.15);
+      border-bottom: 1px solid rgba(208, 215, 222, 0.4);
       transition: box-shadow 0.3s ease;
     }
 
     .nav.scrolled {
-      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.06);
     }
 
     .nav-inner {
@@ -176,7 +176,7 @@
     .section-title {
       font-size: clamp(2rem, 4vw, 2.75rem);
       font-weight: 800;
-      color: #E8ECEF;
+      color: var(--dark);
       letter-spacing: -0.03em;
       line-height: 1.15;
       margin-bottom: 24px;
@@ -207,7 +207,7 @@
       right: -200px;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(255, 122, 0, 0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(248, 137, 58, 0.06) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -266,7 +266,7 @@
     .hero-name {
       font-size: clamp(3rem, 6vw, 4.5rem);
       font-weight: 800;
-      color: #E8ECEF;
+      color: var(--dark);
       letter-spacing: -0.04em;
       line-height: 1.05;
       margin-bottom: 12px;
@@ -307,9 +307,9 @@
 
     .social-link:hover {
       background: var(--orange);
-      color: #0D0D0D;
+      color: white;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(248, 137, 58, 0.3);
     }
 
     .social-link svg {
@@ -337,8 +337,8 @@
       height: 300px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #1F1A14;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      border: 4px solid var(--white);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     }
 
     /* ========================================
@@ -387,12 +387,12 @@
       transition: all 0.2s ease;
     }
 
-    .skill-pill:nth-child(1) { background: #2A1A0A; color: #FF7A00; }
-    .skill-pill:nth-child(2) { background: #1A1A3A; color: #7B61FF; }
-    .skill-pill:nth-child(3) { background: #1F1A14; color: #4DA6FF; }
-    .skill-pill:nth-child(4) { background: #1A2E1A; color: #4CAF50; }
-    .skill-pill:nth-child(5) { background: #2A1A0A; color: #E56A00; }
-    .skill-pill:nth-child(6) { background: #2A1A2A; color: #E87EAD; }
+    .skill-pill:nth-child(1) { background: var(--orange-light); color: #CC5500; }
+    .skill-pill:nth-child(2) { background: var(--purple-light); color: #5A42CC; }
+    .skill-pill:nth-child(3) { background: var(--blue-light); color: #0260A8; }
+    .skill-pill:nth-child(4) { background: #FFF4EC; color: #8B4513; }
+    .skill-pill:nth-child(5) { background: #E8F5E9; color: #2E7D32; }
+    .skill-pill:nth-child(6) { background: #FDE8F0; color: #AD1457; }
 
     .skill-pill:hover {
       transform: translateY(-2px);
@@ -439,9 +439,9 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #0D0D0D;
+      background: var(--white);
       border: 3px solid var(--orange);
-      box-shadow: 0 0 0 4px rgba(255, 122, 0, 0.1);
+      box-shadow: 0 0 0 4px rgba(248, 137, 58, 0.1);
       z-index: 1;
     }
 
@@ -461,7 +461,7 @@
     .timeline-role {
       font-size: 1.35rem;
       font-weight: 700;
-      color: #E8ECEF;
+      color: var(--dark);
       letter-spacing: -0.02em;
       margin-bottom: 2px;
     }
@@ -485,8 +485,8 @@
        ======================================== */
     .impact {
       padding: var(--section-padding) 0;
-      background: #0A0A0A;
-      color: #E8ECEF;
+      background: var(--gray-900);
+      color: var(--white);
       position: relative;
       overflow: hidden;
     }
@@ -498,7 +498,7 @@
       right: -100px;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(255, 122, 0, 0.08) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(248, 137, 58, 0.08) 0%, transparent 60%);
       border-radius: 50%;
     }
 
@@ -507,7 +507,7 @@
     }
 
     .impact .section-title {
-      color: #E8ECEF;
+      color: var(--white);
     }
 
     .stats-grid {
@@ -520,8 +520,8 @@
     }
 
     .stat-card {
-      background: rgba(255, 122, 0, 0.04);
-      border: 1px solid rgba(255, 122, 0, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--border-radius);
       padding: 40px 28px;
       text-align: center;
@@ -529,8 +529,8 @@
     }
 
     .stat-card:hover {
-      background: rgba(255, 122, 0, 0.08);
-      border-color: rgba(255, 122, 0, 0.3);
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(248, 137, 58, 0.3);
       transform: translateY(-4px);
     }
 
@@ -540,7 +540,7 @@
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 8px;
-      background: linear-gradient(135deg, #FF7A00, #FFB366);
+      background: linear-gradient(135deg, var(--orange), #FFB366);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -548,7 +548,7 @@
 
     .stat-label {
       font-size: 0.875rem;
-      color: #708090;
+      color: rgba(255, 255, 255, 0.6);
       line-height: 1.4;
       font-weight: 500;
     }
@@ -563,7 +563,7 @@
     .subsection-heading {
       font-size: 1.25rem;
       font-weight: 700;
-      color: #E8ECEF;
+      color: var(--dark);
       letter-spacing: -0.02em;
       margin-bottom: 8px;
       margin-top: 56px;
@@ -586,8 +586,8 @@
     }
 
     .video-card {
-      background: #1F1A14;
-      border: 1px solid #3A2F1F;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
       border-radius: var(--border-radius);
       overflow: hidden;
       transition: all 0.3s ease;
@@ -631,7 +631,7 @@
     .video-caption-text {
       font-size: 0.95rem;
       font-weight: 600;
-      color: #E8ECEF;
+      color: var(--dark);
       margin-bottom: 6px;
       line-height: 1.4;
     }
@@ -712,7 +712,7 @@
     }
 
     .lightbox-content {
-      background: #1F1A14;
+      background: var(--white);
       border-radius: 20px;
       max-width: 520px;
       width: 100%;
@@ -774,7 +774,7 @@
     .lightbox-text {
       font-size: 1.15rem;
       font-weight: 600;
-      color: #E8ECEF;
+      color: var(--dark);
       line-height: 1.5;
       margin-bottom: 12px;
     }
@@ -791,7 +791,7 @@
       gap: 6px;
       padding: 10px 20px;
       background: var(--orange);
-      color: #0D0D0D;
+      color: white;
       border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 600;
@@ -829,14 +829,14 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      border: 1.5px solid #3A2F1F;
-      background: #1F1A14;
+      border: 1.5px solid var(--gray-300);
+      background: var(--white);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.2s ease;
-      color: #A0ADB8;
+      color: var(--gray-700);
     }
 
     .carousel-btn:hover {
@@ -875,8 +875,8 @@
     }
 
     .quote-card {
-      background: #1F1A14;
-      border: 1px solid rgba(255, 122, 0, 0.1);
+      background: var(--gray-900);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--border-radius);
       padding: 32px 28px;
       position: relative;
@@ -884,7 +884,7 @@
     }
 
     .quote-card:hover {
-      border-color: rgba(255, 122, 0, 0.3);
+      border-color: rgba(248, 137, 58, 0.3);
       transform: translateY(-4px);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
     }
@@ -892,7 +892,7 @@
     .quote-card-text {
       font-size: 1.1rem;
       font-weight: 600;
-      color: #E8ECEF;
+      color: var(--white);
       line-height: 1.5;
       margin-bottom: 20px;
       letter-spacing: -0.01em;
@@ -908,11 +908,11 @@
     .quote-card-handle {
       font-size: 0.8rem;
       font-weight: 500;
-      color: #708090;
+      color: rgba(255, 255, 255, 0.5);
     }
 
     .quote-card-handle a {
-      color: #708090;
+      color: rgba(255, 255, 255, 0.5);
       transition: color 0.2s ease;
     }
 
@@ -923,7 +923,7 @@
     .quote-card-engagement {
       font-size: 0.85rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #FF7A00, #FFB366);
+      background: linear-gradient(135deg, var(--orange), #FFB366);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -936,7 +936,7 @@
       gap: 4px;
       font-size: 0.75rem;
       font-weight: 500;
-      color: #506070;
+      color: rgba(255, 255, 255, 0.4);
       margin-top: 12px;
       transition: color 0.2s ease;
     }
@@ -966,8 +966,8 @@
     }
 
     .testimonial-card {
-      background: #1F1A14;
-      border: 1px solid #3A2F1F;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
       border-radius: var(--border-radius);
       padding: 32px 24px;
       position: relative;
@@ -999,7 +999,7 @@
     .testimonial-author {
       font-size: 0.9rem;
       font-weight: 700;
-      color: #E8ECEF;
+      color: var(--dark);
       margin-bottom: 2px;
     }
 
@@ -1060,11 +1060,11 @@
       gap: 8px;
       padding: 14px 28px;
       border-radius: 100px;
-      background: #1F1A14;
-      border: 1px solid #3A2F1F;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
       font-size: 0.95rem;
       font-weight: 600;
-      color: #E8ECEF;
+      color: var(--dark);
       transition: all 0.2s ease;
     }
 
@@ -1074,7 +1074,7 @@
 
     .event-pill:hover {
       border-color: var(--orange);
-      box-shadow: 0 4px 16px rgba(255, 122, 0, 0.1);
+      box-shadow: 0 4px 16px rgba(248, 137, 58, 0.1);
       transform: translateY(-2px);
     }
 
@@ -1096,8 +1096,8 @@
     }
 
     .case-study-card {
-      background: #1F1A14;
-      border: 1px solid #3A2F1F;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
       border-radius: var(--border-radius);
       padding: 48px;
       margin-top: 48px;
@@ -1125,7 +1125,7 @@
     .case-study-name {
       font-size: 1.75rem;
       font-weight: 800;
-      color: #E8ECEF;
+      color: var(--dark);
       letter-spacing: -0.02em;
       margin-bottom: 12px;
     }
@@ -1165,7 +1165,7 @@
       width: 20px;
       height: 20px;
       background: var(--orange);
-      color: #0D0D0D;
+      color: var(--white);
       font-size: 0.65rem;
       font-weight: 700;
       border-radius: 50%;
@@ -1198,8 +1198,8 @@
       gap: 48px;
       align-items: center;
       margin-top: 48px;
-      background: #1F1A14;
-      border: 1px solid #3A2F1F;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-300);
       border-radius: var(--border-radius);
       padding: 48px;
     }
@@ -1228,8 +1228,8 @@
        ======================================== */
     .footer {
       padding: 80px 0 48px;
-      background: #0A0A0A;
-      color: #E8ECEF;
+      background: var(--dark);
+      color: var(--white);
     }
 
     .footer-inner {
@@ -1247,7 +1247,7 @@
     }
 
     .footer-title span {
-      background: linear-gradient(135deg, #FF7A00, #FFB366);
+      background: linear-gradient(135deg, var(--orange), #FFB366);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1255,7 +1255,7 @@
 
     .footer-subtitle {
       font-size: 1.125rem;
-      color: #708090;
+      color: rgba(255, 255, 255, 0.5);
       margin-bottom: 36px;
     }
 
@@ -1278,24 +1278,24 @@
 
     .footer-link--primary {
       background: var(--orange);
-      color: #0D0D0D;
+      color: var(--white);
     }
 
     .footer-link--primary:hover {
       background: var(--orange-hover);
       transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(255, 122, 0, 0.4);
+      box-shadow: 0 4px 16px rgba(248, 137, 58, 0.4);
     }
 
     .footer-link--ghost {
-      background: rgba(255, 122, 0, 0.06);
-      color: #A0ADB8;
-      border: 1px solid rgba(255, 122, 0, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .footer-link--ghost:hover {
-      background: rgba(255, 122, 0, 0.12);
-      color: #E8ECEF;
+      background: rgba(255, 255, 255, 0.12);
+      color: white;
       transform: translateY(-2px);
     }
 
@@ -1307,13 +1307,13 @@
     .footer-divider {
       width: 100%;
       height: 1px;
-      background: rgba(255, 122, 0, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       margin-bottom: 28px;
     }
 
     .footer-bottom {
       font-size: 0.8rem;
-      color: #506070;
+      color: rgba(255, 255, 255, 0.3);
     }
 
     /* ========================================
@@ -1403,7 +1403,7 @@
         top: 64px;
         left: 0;
         right: 0;
-        background: rgba(13, 13, 13, 0.98);
+        background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 24px 20px;
@@ -1565,22 +1565,22 @@
        ======================================== */
     .hero {
       background:
-        radial-gradient(ellipse at 20% 50%, rgba(255, 122, 0, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(255, 122, 0, 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 50%, rgba(248, 137, 58, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(248, 137, 58, 0.06) 0%, transparent 50%);
     }
 
     .impact {
       background:
-        radial-gradient(ellipse at 20% 50%, rgba(255, 122, 0, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(255, 122, 0, 0.06) 0%, transparent 50%),
-        #0A0A0A;
+        radial-gradient(ellipse at 20% 50%, rgba(248, 137, 58, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(248, 137, 58, 0.06) 0%, transparent 50%),
+        var(--gray-900);
     }
 
     .footer {
       background:
-        radial-gradient(ellipse at 80% 80%, rgba(255, 122, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(248, 137, 58, 0.08) 0%, transparent 50%),
         radial-gradient(ellipse at 20% 30%, rgba(123, 97, 255, 0.05) 0%, transparent 50%),
-        #0A0A0A;
+        var(--dark);
     }
 
     /* ========================================
@@ -1618,7 +1618,7 @@
         left: 0;
         width: 36px;
         height: 36px;
-        border: 2px solid rgba(255, 122, 0, 0.4);
+        border: 2px solid rgba(248, 137, 58, 0.4);
         border-radius: 50%;
         pointer-events: none;
         z-index: 10000;
@@ -1635,7 +1635,7 @@
       .cursor-ring.hover {
         width: 52px;
         height: 52px;
-        border-color: rgba(255, 122, 0, 0.6);
+        border-color: rgba(248, 137, 58, 0.6);
       }
     }
 
@@ -1666,8 +1666,8 @@
       align-items: center;
       justify-content: center;
       padding: 20px 16px;
-      background: #1F1A14;
-      border: 1px solid #3A2F1F;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
       border-radius: 12px;
       transition: all 0.25s ease;
       cursor: pointer;
@@ -1679,14 +1679,12 @@
       width: auto;
       max-width: 120px;
       object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.8;
     }
 
     .brand-pill:hover {
       border-color: var(--orange);
       color: var(--orange);
-      box-shadow: 0 4px 16px rgba(255, 122, 0, 0.12);
+      box-shadow: 0 4px 16px rgba(248, 137, 58, 0.12);
       transform: translateY(-2px);
     }
 
@@ -1695,7 +1693,7 @@
       gap: 48px;
       margin-top: 40px;
       padding: 24px 0;
-      border-top: 1px solid #3A2F1F;
+      border-top: 1px solid var(--gray-300);
     }
 
     .partnership-stat {
@@ -1706,11 +1704,8 @@
     .partnership-stat-number {
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 800;
+      color: var(--dark);
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #FF7A00, #FFB366);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
 
     .partnership-stat-label {
@@ -1720,13 +1715,13 @@
     }
 
     .stat-number, .partnership-stat-number {
-      text-shadow: 0 0 20px rgba(255, 122, 0, 0.3), 0 0 40px rgba(255, 122, 0, 0.1);
+      text-shadow: 0 0 20px rgba(248, 137, 58, 0.3), 0 0 40px rgba(248, 137, 58, 0.1);
     }
 
     .brand-label {
       font-size: 0.85rem;
       font-weight: 700;
-      color: #A0ADB8;
+      color: var(--gray-700);
       margin-left: 8px;
       letter-spacing: 0.02em;
     }
@@ -1736,8 +1731,8 @@
       min-width: 320px;
       max-width: 360px;
       flex-shrink: 0;
-      background: #1F1A14;
-      border: 1px solid #3A2F1F;
+      background: var(--white);
+      border: 1px solid var(--gray-300);
       border-radius: 16px;
       padding: 28px 24px;
       display: flex;
@@ -1768,13 +1763,13 @@
     .campaign-card-title {
       font-size: 1.15rem;
       font-weight: 700;
-      color: #E8ECEF;
+      color: var(--dark);
       letter-spacing: -0.01em;
     }
 
     .campaign-card-desc {
       font-size: 0.875rem;
-      color: #A0ADB8;
+      color: var(--gray-700);
       line-height: 1.6;
     }
 
@@ -1792,7 +1787,7 @@
     .campaign-card-stat-num {
       font-size: 1.1rem;
       font-weight: 800;
-      color: #E8ECEF;
+      color: var(--dark);
     }
 
     .campaign-card-stat-label {
@@ -1847,7 +1842,9 @@
 </head>
 <body>
 
-  <!-- V3: SVG Noise Filter -->
+  
+<div style="background: #FF7A00; color: #FFFFFF; text-align: center; padding: 8px 0; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.03em;">Tailored for BloFin</div>
+<!-- V3: SVG Noise Filter -->
   <svg style="position:fixed;top:0;left:0;width:0;height:0;" aria-hidden="true">
     <filter id="grain">
       <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
@@ -1858,8 +1855,6 @@
   <!-- V3: Custom Cursor -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
-
-  <div style="background: #FF7A00; color: #0D0D0D; text-align: center; padding: 8px 0; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.03em;">Tailored for BloFin</div>
 
   <!-- ========================================
        NAVIGATION (updated)
@@ -1893,7 +1888,7 @@
           <div class="hero-badge fade-up">Cooking</div>
           <h1 class="hero-name fade-up fade-up-delay-1">Dominic Tsang</h1>
           <p class="hero-title fade-up fade-up-delay-2">Growth & Ecosystem Manager</p>
-          <p class="hero-tagline fade-up fade-up-delay-3">Crypto-native content operator. Memes, video, community voice, and AI-powered workflow.</p>
+          <p class="hero-tagline fade-up fade-up-delay-3">Building at Xverse. I help bring Bitcoin to more people through content, community, and creative GTM.</p>
           <div class="hero-socials fade-up fade-up-delay-4">
             <a href="https://x.com/dominik_btc" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -1907,7 +1902,7 @@
           </div>
         </div>
         <div class="hero-image-wrap fade-up">
-          <img src="../portfolio/headshot.jpg" alt="Dominic Tsang" class="hero-image">
+          <img src="portfolio/headshot.jpg" alt="Dominic Tsang" class="hero-image">
         </div>
       </div>
     </div>
@@ -1939,7 +1934,7 @@
           <span class="section-label">About</span>
           <h2 class="section-title">A bit about me</h2>
           <p class="about-text">
-            8+ years in social media, content marketing, KOL management, partnerships, and community growth. Crypto, web3, video production, biz dev. I make content that goes viral, close deals with brands you've heard of, and use AI to scale my workflow.
+            8+ years in growth, content, and partnerships across crypto and digital media. At Xverse, helped scale a Bitcoin wallet to 2M+ users, grew X from 50K to 127K+ organically with 80M+ impressions, and built co-marketing partnerships with Circle, CoinGecko, MoonPay, and Google Cloud. Created content across the full funnel, managed 100+ KOL relationships globally, and led GTM for product launches.
           </p>
         </div>
         <div class="fade-up fade-up-delay-2">
@@ -1958,6 +1953,22 @@
   </section>
 
   <!-- ========================================
+       BLOFIN VIDEO DEMO (injected)
+       ======================================== -->
+  <section id="blofin-demo" style="padding: 64px 0; background: #FFFFFF; border-top: 1px solid #F6F8FA; border-bottom: 1px solid #F6F8FA;">
+    <div class="container" style="text-align: center;">
+      <span class="section-label fade-up" style="display: inline-block; padding: 4px 12px; background: #FFF4EC; color: #FF7A00; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; border-radius: 4px; margin-bottom: 12px;">Built for BloFin</span>
+      <h2 class="section-title fade-up" style="color: #000000; margin-bottom: 8px;">BloFin Wallet — Remotion Video Demo</h2>
+      <p class="fade-up" style="color: #6E7681; font-size: 0.9rem; margin-bottom: 28px; max-width: 560px; margin-left: auto; margin-right: auto;">Programmatic vertical video built with Remotion + BloFin brand. Config-driven template that generates wallet feature videos on demand. 30 minutes config-to-render, 1080×1920 vertical, ready for X/TikTok.</p>
+      <div class="fade-up" style="max-width: 360px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(255, 122, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.04);">
+        <video controls playsinline style="width: 100%; display: block; background: #000000;" poster="">
+          <source src="blofin-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
        REORDERABLE SECTIONS WRAPPER
        ======================================== -->
   <div class="reorderable" id="reorderable">
@@ -1971,7 +1982,7 @@
       <h2 class="section-title fade-up">Ecosystem partnerships</h2>
       <p class="section-subtitle fade-up">Managed partner relationships across wallets, L2s, infrastructure, media, and community projects. Click any name to see the collaboration.</p>
 
-      <div class="partnership-stats fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 32px;">
+      <div class="partnership-stats fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
         <div class="partnership-stat">
           <span class="partnership-stat-number">2M+</span>
           <span class="partnership-stat-label">Product users</span>
@@ -1999,18 +2010,18 @@
       </div>
 
       <div class="brand-wall fade-up">
-        <a href="https://x.com/xverse/status/2036099600269062511" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/google.svg" alt="Google"></a>
-        <a href="https://x.com/xverse/status/1927394394916753896" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/starknet.svg" alt="Starknet"></a>
-        <a href="https://x.com/xverse/status/1745652765966438869" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/ledger.svg" alt="Ledger"></a>
-        <a href="https://x.com/xverse/status/1981358452929942002" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/usdc.svg" alt="USDC"><span class="brand-label">USDC</span></a>
-        <a href="https://x.com/xverse/status/1990439194993611241" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/wbtc.svg" alt="WBTC"><span class="brand-label">WBTC</span></a>
-        <a href="https://x.com/coingecko/status/1943294285518115207" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/coingecko.svg" alt="CoinGecko"></a>
-        <a href="https://x.com/xverse/status/2033891961606967309" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/spark.svg" alt="Spark"></a>
-        <a href="https://x.com/xverse/status/1906695033887330575" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/bob.svg?v=2" alt="BOB"></a>
-        <a href="https://x.com/xverse/status/1960009309192130865" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/lombard.png" alt="Lombard" style="height: 32px;"></a>
-        <a href="https://x.com/xverse/status/1887478307400393098" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/keystone.png" alt="Keystone"><span class="brand-label">Keystone</span></a>
-        <a href="https://x.com/xverse/status/1935326199808704921" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/moonpay.svg" alt="MoonPay"></a>
-        <a href="https://x.com/xverse/status/1933162474280567050" target="_blank" rel="noopener" class="brand-pill"><img src="../img/brands/stacks.svg" alt="Stacks"><span class="brand-label">Stacks</span></a>
+        <a href="https://x.com/xverse/status/2036099600269062511" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/google.svg" alt="Google"></a>
+        <a href="https://x.com/xverse/status/1927394394916753896" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/starknet.svg" alt="Starknet"></a>
+        <a href="https://x.com/xverse/status/1745652765966438869" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/ledger.svg" alt="Ledger"></a>
+        <a href="https://x.com/xverse/status/1981358452929942002" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/usdc.svg" alt="USDC"><span class="brand-label">USDC</span></a>
+        <a href="https://x.com/xverse/status/1990439194993611241" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/wbtc.svg" alt="WBTC"><span class="brand-label">WBTC</span></a>
+        <a href="https://x.com/coingecko/status/1943294285518115207" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/coingecko.svg" alt="CoinGecko"></a>
+        <a href="https://x.com/xverse/status/2033891961606967309" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/spark.svg" alt="Spark"></a>
+        <a href="https://x.com/xverse/status/1906695033887330575" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/bob.svg?v=2" alt="BOB"></a>
+        <a href="https://x.com/xverse/status/1960009309192130865" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/lombard.png" alt="Lombard" style="height: 32px;"></a>
+        <a href="https://x.com/xverse/status/1887478307400393098" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/keystone.png" alt="Keystone"><span class="brand-label">Keystone</span></a>
+        <a href="https://x.com/xverse/status/1935326199808704921" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/moonpay.svg" alt="MoonPay"></a>
+        <a href="https://x.com/xverse/status/1933162474280567050" target="_blank" rel="noopener" class="brand-pill"><img src="img/brands/stacks.svg" alt="Stacks"><span class="brand-label">Stacks</span></a>
       </div>
     </div>
   </section>
@@ -2028,7 +2039,7 @@
 
         <!-- 1. What The Fork -->
         <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
-          <img src="../img/wtf-logo.svg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 140px; height: 140px; opacity: 0.08; pointer-events: none;">
+          <img src="img/wtf-logo.svg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 140px; height: 140px; opacity: 0.08; pointer-events: none;">
           <span class="campaign-card-badge">Creative Campaign</span>
           <h3 class="campaign-card-title">What The Fork</h3>
           <p class="campaign-card-desc">Bitcoin soft-fork advocacy campaign featuring a dedicated website, merch line, and community activations.</p>
@@ -2053,7 +2064,7 @@
 
         <!-- 2. Xverse Card Launch -->
         <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
-          <img src="../img/xverse-card.png" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 180px; opacity: 0.1; pointer-events: none; transform: rotate(-10deg);">
+          <img src="img/xverse-card.png" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 180px; opacity: 0.1; pointer-events: none; transform: rotate(-10deg);">
           <span class="campaign-card-badge">Product Launch</span>
           <h3 class="campaign-card-title">Xverse Card Launch</h3>
           <p class="campaign-card-desc">Full GTM for Bitcoin's first self-custody spending card. Produced AI video teasers, KOL seeding, SEO landing pages, in-app push.</p>
@@ -2078,7 +2089,7 @@
 
         <!-- 3. Native Staking -->
         <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
-          <img src="../img/brands/wbtc.svg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 120px; height: 120px; opacity: 0.08; pointer-events: none;">
+          <img src="img/brands/wbtc.svg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 120px; height: 120px; opacity: 0.08; pointer-events: none;">
           <span class="campaign-card-badge">GTM Campaign</span>
           <h3 class="campaign-card-title">Native Staking Launch</h3>
           <p class="campaign-card-desc">Planned GTM content wave for native BTC staking launch. Blog, video, and AI-generated content including Starknet free gas awareness video.</p>
@@ -2103,7 +2114,7 @@
 
         <!-- 4. Starknet Integration -->
         <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
-          <img src="../img/brands/starknet.svg" alt="" style="position: absolute; right: 30px; bottom: -60px; width: 160px; height: 160px; opacity: 0.07; pointer-events: none;">
+          <img src="img/brands/starknet.svg" alt="" style="position: absolute; right: 30px; bottom: -60px; width: 160px; height: 160px; opacity: 0.07; pointer-events: none;">
           <span class="campaign-card-badge">Partner Campaign</span>
           <h3 class="campaign-card-title">Starknet Integration</h3>
           <p class="campaign-card-desc">Co-managed cross-team GTM with Starknet across marketing, product, and engineering. Drafted content, coordinated timelines, and arranged visuals.</p>
@@ -2120,7 +2131,7 @@
 
         <!-- 5. Xclusive -->
         <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
-          <img src="../img/xverse-logo-full.png" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 160px; opacity: 0.07; pointer-events: none;">
+          <img src="img/xverse-logo-full.png" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 160px; opacity: 0.07; pointer-events: none;">
           <span class="campaign-card-badge">Partnership Campaign</span>
           <h3 class="campaign-card-title">Xclusive</h3>
           <p class="campaign-card-desc">Managed partner giveaways across 10+ projects, driving 40K+ registrations to the Xverse ecosystem.</p>
@@ -2145,7 +2156,7 @@
 
         <!-- 6. Touch Grass -->
         <div class="campaign-card fade-up" style="position: relative; overflow: hidden;">
-          <img src="../img/touch-grass-logo.jpg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 120px; height: 120px; opacity: 0.15; pointer-events: none; border-radius: 20px;">
+          <img src="img/touch-grass-logo.jpg" alt="" style="position: absolute; right: 10px; bottom: 10px; width: 120px; height: 120px; opacity: 0.15; pointer-events: none; border-radius: 20px;">
           <span class="campaign-card-badge">Product Marketing</span>
           <h3 class="campaign-card-title">Touch Grass</h3>
           <p class="campaign-card-desc">Grew grass on the Xverse app icon as a product Easter egg. Community spotted it organically and shared across X.</p>
@@ -2174,22 +2185,6 @@
   </section>
 
   <!-- ========================================
-       REMOTION DEMO
-       ======================================== -->
-  <section style="padding: 60px 0;">
-    <div class="container">
-      <span class="section-label fade-up">Demo</span>
-      <h2 class="section-title fade-up">BloFin Wallet — Remotion Video Demo</h2>
-      <p style="color: rgba(255,255,255,0.6); margin-bottom: 24px; font-size: 14px;" class="fade-up">Programmatic vertical video built with Remotion + BloFin brand. Config-driven template that generates wallet feature videos on demand.</p>
-      <div class="fade-up" style="max-width: 360px; margin: 0 auto; border-radius: 12px; overflow: hidden;">
-        <video controls playsinline style="width: 100%; display: block;" poster="">
-          <source src="blofin-demo.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================
        SECTION 3: BRAND CONTENT
        ======================================== -->
   <section class="viral-content" id="brand-content" data-section-order="3" data-content-order="1" style="padding: var(--section-padding) 0;">
@@ -2203,7 +2198,7 @@
         <!-- 1. "Should we add this feature?" -->
         <div class="campaign-card fade-up">
           <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
-            <img src="../img/should-we-add.png" alt="Should we add this feature?" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+            <img src="img/should-we-add.png" alt="Should we add this feature?" style="width: 100%; height: 180px; object-fit: cover; display: block;">
           </div>
           <span class="campaign-card-badge">Community Engagement</span>
           <h3 class="campaign-card-title">"Should we add this feature?"</h3>
@@ -2226,7 +2221,7 @@
         <!-- 3. Xverse Undo (April Fools) -->
         <div class="campaign-card fade-up">
           <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
-            <img src="../img/xverse-undo.jpg" alt="Xverse Undo" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+            <img src="img/xverse-undo.jpg" alt="Xverse Undo" style="width: 100%; height: 180px; object-fit: cover; display: block;">
           </div>
           <span class="campaign-card-badge">Creative Content</span>
           <h3 class="campaign-card-title">Xverse Undo</h3>
@@ -2253,7 +2248,7 @@
         <!-- 4. Living the dream -->
         <div class="campaign-card fade-up">
           <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
-            <img src="../img/living-the-dream.jpg" alt="Living the dream" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+            <img src="img/living-the-dream.jpg" alt="Living the dream" style="width: 100%; height: 180px; object-fit: cover; display: block;">
           </div>
           <span class="campaign-card-badge">Video Content</span>
           <h3 class="campaign-card-title">Living the dream. Still buidling.</h3>
@@ -2276,7 +2271,7 @@
         <!-- 5. Breaking -->
         <div class="campaign-card fade-up">
           <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
-            <img src="../img/breaking.jpg" alt="Breaking" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+            <img src="img/breaking.jpg" alt="Breaking" style="width: 100%; height: 180px; object-fit: cover; display: block;">
           </div>
           <span class="campaign-card-badge">Video Content</span>
           <h3 class="campaign-card-title">Breaking:</h3>
@@ -2299,7 +2294,7 @@
         <!-- 6. Bitcoin Conf -->
         <div class="campaign-card fade-up">
           <div style="border-radius: 12px; overflow: hidden; margin-bottom: 12px;">
-            <img src="../img/bitcoin-conf.jpg" alt="Bitcoin Conference" style="width: 100%; height: 180px; object-fit: cover; display: block;">
+            <img src="img/bitcoin-conf.jpg" alt="Bitcoin Conference" style="width: 100%; height: 180px; object-fit: cover; display: block;">
           </div>
           <span class="campaign-card-badge">Video Content</span>
           <h3 class="campaign-card-title">What are we breaking today?</h3>
@@ -2349,7 +2344,7 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; border-radius: 12px; overflow: hidden; background: var(--gray-50);">
             <!-- Left: Wake up stare photo -->
             <div style="position: relative;">
-              <img src="../img/wake-up-xverse.jpg" alt="Wake up, stare at Xverse" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <img src="img/wake-up-xverse.jpg" alt="Wake up, stare at Xverse" style="width: 100%; height: 100%; object-fit: cover; display: block;">
               <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                 <p style="font-size: 0.8rem; font-weight: 600; color: white; line-height: 1.4;">"Wake up, stare at Xverse, go back to bed."</p>
                 <p style="font-size: 0.7rem; color: rgba(255,255,255,0.7); margin-top: 4px;">4,418 likes &middot; 358 RTs</p>
@@ -2374,7 +2369,7 @@
         <!-- 3. Leonidas tribute thread — 1,234 likes -->
         <div class="video-card fade-up">
           <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
-            <img src="../img/leonidas.jpg" alt="Leonidas tribute thread" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+            <img src="img/leonidas.jpg" alt="Leonidas tribute thread" style="width: 100%; height: 220px; object-fit: cover; display: block;">
             <div style="padding: 20px 24px;">
               <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 6px; font-weight: 600;">@dominik_btc</p>
               <p style="font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.5; margin-bottom: 12px;">"Leonidas - The Runes Father."</p>
@@ -2392,7 +2387,7 @@
         <!-- 4. "Runes are dead" meme — 641 likes -->
         <div class="video-card fade-up">
           <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
-            <img src="../img/runes-dead.jpg" alt="Runes are dead meme" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+            <img src="img/runes-dead.jpg" alt="Runes are dead meme" style="width: 100%; height: 220px; object-fit: cover; display: block;">
             <div style="padding: 20px 24px;">
               <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 6px; font-weight: 600;">@dominik_btc</p>
               <p style="font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.5; margin-bottom: 12px;">"Runes are dead. And I took that personally."</p>
@@ -2410,7 +2405,7 @@
         <!-- 5. "What you actually do at crypto conf" — 140 likes -->
         <div class="video-card fade-up">
           <div style="position: relative; overflow: hidden; border-radius: 12px; background: var(--gray-50);">
-            <img src="../img/crypto-conf.jpg" alt="What you actually do at a crypto conference" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+            <img src="img/crypto-conf.jpg" alt="What you actually do at a crypto conference" style="width: 100%; height: 220px; object-fit: cover; display: block;">
             <div style="padding: 20px 24px;">
               <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin-bottom: 6px; font-weight: 600;">@dominik_btc</p>
               <p style="font-size: 1rem; font-weight: 600; color: var(--dark); line-height: 1.5; margin-bottom: 12px;">"What you actually do at a crypto conference"</p>
@@ -2446,37 +2441,37 @@
   <section class="speaking" id="speaking" style="padding: 80px 0;">
     <div class="container">
       <span class="section-label fade-up">Speaking</span>
-      <h2 class="section-title fade-up" style="margin-bottom: 40px; color: #fff;">On stage across Asia</h2>
+      <h2 class="section-title fade-up" style="margin-bottom: 40px;">On stage across Asia</h2>
 
       <div style="display: flex; gap: 16px; overflow-x: auto; padding-bottom: 16px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
-        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.3);">
-          <img src="../img/speaking-ethhk.jpg" alt="ETH HK" style="width: 100%; height: 220px; object-fit: cover;">
-          <div style="padding: 10px 16px; background: #2A1A0A;">
-            <p style="font-weight: 600; font-size: 0.9rem; color: #fff;">ETH HK</p>
+        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <img src="img/speaking-ethhk.jpg" alt="ETH HK" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 10px 16px; background: var(--white);">
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--dark);">ETH HK</p>
           </div>
         </div>
-        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.3);">
-          <img src="../img/speaking-btcsummit.jpg" alt="Bitcoin Summit" style="width: 100%; height: 220px; object-fit: cover;">
-          <div style="padding: 10px 16px; background: #2A1A0A;">
-            <p style="font-weight: 600; font-size: 0.9rem; color: #fff;">Bitcoin Summit</p>
+        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <img src="img/speaking-btcsummit.jpg" alt="Bitcoin Summit" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 10px 16px; background: var(--white);">
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--dark);">Bitcoin Summit</p>
           </div>
         </div>
-        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.3);">
-          <img src="../img/speaking-btckorea.jpg" alt="BTC Korea" style="width: 100%; height: 220px; object-fit: cover;">
-          <div style="padding: 10px 16px; background: #2A1A0A;">
-            <p style="font-weight: 600; font-size: 0.9rem; color: #fff;">BTC Korea</p>
+        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <img src="img/speaking-btckorea.jpg" alt="BTC Korea" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 10px 16px; background: var(--white);">
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--dark);">BTC Korea</p>
           </div>
         </div>
-        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.3);">
-          <img src="../img/speaking-ordinalsasia.jpg" alt="Ordinals Asia" style="width: 100%; height: 220px; object-fit: cover;">
-          <div style="padding: 10px 16px; background: #2A1A0A;">
-            <p style="font-weight: 600; font-size: 0.9rem; color: #fff;">Ordinals Asia</p>
+        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <img src="img/speaking-ordinalsasia.jpg" alt="Ordinals Asia" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 10px 16px; background: var(--white);">
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--dark);">Ordinals Asia</p>
           </div>
         </div>
-        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.3);">
-          <img src="../img/speaking-alibabacloud.jpg" alt="Alibaba Cloud" style="width: 100%; height: 220px; object-fit: cover;">
-          <div style="padding: 10px 16px; background: #2A1A0A;">
-            <p style="font-weight: 600; font-size: 0.9rem; color: #fff;">Alibaba Cloud</p>
+        <div style="flex: 0 0 280px; scroll-snap-align: start; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+          <img src="img/speaking-alibabacloud.jpg" alt="Alibaba Cloud" style="width: 100%; height: 220px; object-fit: cover;">
+          <div style="padding: 10px 16px; background: var(--white);">
+            <p style="font-weight: 600; font-size: 0.9rem; color: var(--dark);">Alibaba Cloud</p>
           </div>
         </div>
       </div>
@@ -2493,10 +2488,10 @@
   </section>
 
   <!-- Testimonials -->
-  <section style="padding: 48px 0;">
+  <section style="padding: var(--section-padding) 0;">
     <div class="container">
-      <span class="section-label fade-up">Feedback</span>
-      <h2 class="section-title fade-up" style="color: #fff; margin-bottom: 32px;">What people say</h2>
+      <span class="section-label fade-up">Testimonials</span>
+      <h2 class="section-title fade-up">What people say</h2>
       <div class="testimonials-grid">
         <div class="testimonial-card fade-up">
           <div class="testimonial-quote-icon">&ldquo;</div>
@@ -2533,7 +2528,7 @@
         <p class="footer-subtitle fade-up">Always happy to chat about Bitcoin, content, or whatever you're building.</p>
 
         <div class="footer-links fade-up">
-          <a href="mailto:domyea@taki-labs.io" class="footer-link footer-link--primary">
+          <a href="mailto:dominikyea.btc@gmail.com" class="footer-link footer-link--primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             Email me
           </a>
